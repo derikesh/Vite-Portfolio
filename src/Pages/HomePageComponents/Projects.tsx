@@ -77,7 +77,7 @@ function Projects() {
         toggleActions: "play pause resume reset",
         scrub: 0.5,
         invalidateOnRefresh: true,
-        animation: tl.current,
+        // animation: tl.current,
         // pin:true
       },
     });

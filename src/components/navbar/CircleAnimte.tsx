@@ -84,7 +84,7 @@ function AnimateCircle() {
        // function demo 
 
 
-       let mouseTimer :NodeJS.Timer;
+       let mouseTimer :any;
        let funcationHandel = ()=>{
             setmouseIdel(false);
             clearTimeout(mouseTimer);
