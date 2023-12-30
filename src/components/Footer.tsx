@@ -49,7 +49,7 @@ export default function Footer() {
       <Box overflow={'hidden'} bg={'linear-gradient(180deg, #1b1b1b  12.85%, #040404 100%);'} py={"40px"}   width={{ sm: "100%", base: "100%" } } margin={"auto"}>
       <DemoFunction>
       <Flex direction={'column'} gap={{md:30,base:50}}  height={{ xl:'500px',md:'100%'} } maxW={'1360px'} mx={ {xl:'none',lg:'50px',sm:'30px',base:'20px' }} marginX={{lg:"auto",base:"10px"}} borderRadius={'20px'} border={"3px solid white"} padding={{lg:'40px',md:'30px',base:'10px'}} py={{lg:'20px',base:'90px'}} className="footer-wrap">
-          <Heading py={{lg:10}} sx={headingStyle} >FINE ME IN </Heading>
+          <Heading py={{lg:10}} sx={headingStyle} >FIND ME IN </Heading>
           <Flex gap={ {lg:'',md:'80px',base:'60px'} } direction={ {lg:'row',md:'column',base:'column'} } px={10} width={'100%'} justifyContent={'space-around'} className="footer_info">
 
             <Flex gap={10} borderRight={{lg:'3px solid #3E3E3E',md:'unset'}} width={{lg:'50%',md:'100%',base:'100%'}} direction={"column"} alignItems={{lg:'unset',md:'center'}} className="socials">
