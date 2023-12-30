@@ -1,0 +1,48 @@
+
+
+body {
+  margin: 0;
+ padding: 0;
+ background: linear-gradient(180deg, #252525 0.59%, rgba(37, 37, 37, 0.62) 100%);
+}
+
+.site_wrap {
+  background: #1b1b1b ;
+  /* background: radial-gradient(circle, rgba(4,11,51,1) 0%, rgba(0,0,0,1) 88%); */
+  color: white;
+  min-height: 100vh;
+}
+
+.bg-slate { 
+  background-color: #252525;
+}
+
+@media only screen and ( min-width:769px ) {
+  .burger_Curseo{
+    display: none;
+  }
+}
+
+.bg_home.move-right {
+  transform: translateX(-25px); 
+  /* transition: 0.4s ease-in; */
+}
+
+
+.bg_home.move-left {
+  transform: translateX(25px); 
+  /* transition: 0.4s ease-in; */
+
+}
+
+
+.bg_home.move-up {
+  top: -7px; 
+}
+
+
+.bg_home.move-down {
+  top: 0; 
+}
+
+

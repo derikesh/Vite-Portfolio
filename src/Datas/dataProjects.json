@@ -1,0 +1,35 @@
+[
+  {
+    "projectName": "Prime ICT v7",
+    "projectDetail": "In our team, I specialized in frontend work with ChakraUI and React using Typescript. I created interactive pages, animations, and handled state management. I also collaborated on backend tasks, focusing on API integration and JWT token authentication, enriching the project's frontend",
+    "projectLink": "https://ictv7.primeitclub.com/",
+    "projectStack": ["chakraUi", "react", "typescript"],
+    "projectImage": "imageICT",
+    "id": 0
+  },
+  {
+    "projectName": "Prime It Club",
+    "projectDetail": "As the project lead for the frontend at Prime IT Club, I guided the team to success. With support from experienced seniors, we crafted the design using Tailwind, achieving our goals collaboratively",
+    "projectLink": "https://primeitclub.com/",
+    "projectStack": [ "tailwind"],
+    "projectImage": "imagePrimeItClub",
+    "if": 1
+  },
+  {
+    "projectName": "Portfolio",
+    "projectDetail": "Crafted entirely by myself, my portfolio project was a joy to design and develop. Embracing research, I meticulously executed my vision, completing it as envisioned.",
+    "projectLink": "",
+    "projectStack": ["react", "typescript","chakraUi","firestore"],
+    "projectImage": "imagePortfolio",
+    "if": 2
+  },
+  {
+    "projectName": "TechBall",
+    "projectDetail": "Tasked with bug fixes, new page creation, and enhancing sections on multiple pages for TechBall, I collaborated with a senior designer, resulting in a successful project. This journey with WordPress taught me invaluable lessons.",
+    "projectLink": "https://techballsolutions.com.au/",
+    "projectStack": ["wordpress", "bootstrap", "gsap"],
+    "projectImage": "imageTechball",
+    "if": 3
+  } 
+]
+
