@@ -34,7 +34,7 @@ function AboutPage() {
       },
     } );     
 
-      tl.to( aboutHeading.current ,{  duration:3 , text:{ value:"PASSIONATELY BLENDING CREATIVITY IN DESIGN TO CRAFT DIGITAL NARRATIVES"} } );
+      tl.to( aboutHeading.current ,{  duration:1.5 , text:{ value:"HI, I AM RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS"} } );
 
         tl.fromTo( ImageRef.current , { scale:0  } , { scale:1,ease: "elastic.out(1,0.3)",delay:2} );
 
@@ -53,7 +53,7 @@ function AboutPage() {
 
   return (
     <>
-       <Box className="about_page_wrap" py={20}  mb={{lg:30,base:5}}>
+       <Box className="about_page_wrap" py={40}  mb={{lg:30,base:5}}>
         <Heading
           ref={aboutHeading}
           className="heading_about"
@@ -77,7 +77,7 @@ function AboutPage() {
             <Text
               fontSize={{ lg: "24px", md: "20px", sm: "20px", base: "18px" }}
             >
-              Exploring the digital world for over a year, I'm Rikesh a creative enthusiast crafting digital presence through web design and programming. Excited to further delve into this platform, uncovering new realms of innovation.
+               I've been exploring the online world for more than a year. I really love creating websites and using computer skills to make cool stuff. I'm super excited to learn even more and find new ways to make neat things online.
             </Text>
           </Box>
 

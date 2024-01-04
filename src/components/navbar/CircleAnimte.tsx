@@ -60,8 +60,8 @@ function AnimateCircle() {
 
         const nextCircle: any = circles[index + 1] || circles[0];
 
-        x += (nextCircle.x - x) * 0.58;
-        y += (nextCircle.y - y) * 0.58;
+        x += (nextCircle.x - x) * 0.48;
+        y += (nextCircle.y - y) * 0.48;
       });
 
       requestAnimationFrame(animateCirlce);
