@@ -45,4 +45,15 @@ body {
   top: 0; 
 }
 
+.sticky { 
+  background: rgba(51, 51, 51, 0.92);
+  border-radius: 50px;
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
+  transition: 0.5s ease-in;
+}
 
+.sticky .active {
+  color: #1de1e1;
+}

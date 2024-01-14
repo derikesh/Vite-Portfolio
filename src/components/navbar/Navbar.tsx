@@ -1,19 +1,18 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
- 
-} from "@chakra-ui/react";
-import {  Link, NavLink, Outlet } from "react-router-dom";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // icon
-import burger from "../../assets/images/icons/burger.svg"
+import burger from "../../assets/images/icons/burger.svg";
 
 function Navbar() {
   // state for navitem
   const [navitem, setNavitem] = useState<boolean>(false);
+
+  // status sticky
+  const [status, setStatus] = useState<boolean>(false);
+
+  
 
   // state to change logo
   const [logo, setLogo] = useState("RIKESH");
@@ -25,26 +24,21 @@ function Navbar() {
       navPath: "/",
       navLogo: "Rikesh",
     },
-
     {
       navTitle: "Webworks",
       navPath: "/webworks",
       navLogo: "Webworks",
     },
-
     {
       navTitle: "Figma",
       navPath: "/figma",
       navLogo: "Figma",
     },
-
-    
     {
       navTitle: "CV",
       navPath: "/resume",
       navLogo: "Resume",
-    }
-   
+    },
   ];
 
   // function to set display
@@ -53,6 +47,10 @@ function Navbar() {
   };
 
   const hideMenu = (navlogo: string) => {
+
+    window.scrollTo(0, 0);
+
+
     setLogo(navlogo);
 
     if (window.innerWidth <= 768) {
@@ -60,9 +58,12 @@ function Navbar() {
     }
   };
 
-  // to handel nav toogle
+  // to handle nav toggle
+
+
   useEffect(() => {
-    const handelWidth = () => {
+
+    const handleWidth = () => {
       if (window.innerWidth <= 768) {
         setNavitem(false);
       } else {
@@ -70,45 +71,70 @@ function Navbar() {
       }
     };
 
-    handelWidth();
+    handleWidth();
 
-    window.addEventListener("resize", handelWidth);
+    window.addEventListener("resize", handleWidth);
 
     // cleaning up any event
     return () => {
-      window.removeEventListener("resize", handelWidth);
+      window.removeEventListener("resize", handleWidth);
     };
   }, []);
 
-
-
+  // for sticky navbar
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 180) {
+        setStatus(true);
+      }else if(window.scrollY < 180){
+      setStatus(false);
+      } 
+    });
+  }, [status]);
   return (
     <>
+     
+     { status ? (
+      <Box h={10 + "px"} >
+      </Box>
+     ) : (
+      <Box h={0+"px"} >
+      </Box>
+     )} 
+
       <Box
-        className={`NavBar_wrap ${navitem ? 'sticky' : ''}`}
+        className={`NavBar_wrap ${status ? "sticky" : ""}`}
         w={{ xl: "100%", base: "90%" }}
-        py={4}
-        m={"auto"}
-      >
+        py={ status ? 2 : 4}
+        px={ status ? 4 : 0}
+        m={"auto"}      
+        >
+
         <Flex
           alignItems={"center"}
           justifyContent={"space-between"}
-          pb={{ md: "11px", sm: "16px", base: "16px" }}
-          borderBottom={"1px solid #DFDFDF"}
+          pb={ status ? "" : { md: "11px", sm: "16px", base: "16px" }}
+          borderBottom={ status ? "" : "1px solid #DFDFDF"}
         >
-          <Link onClick={ ()=>{ setLogo("Rikesh") } } to={"/"} >
-          <Heading
-            as={"h5"}
-            fontSize={{ base: "20px", md: "22px", lg: "24px" }}
-            textTransform={"uppercase"}
+          <Link
+            onClick={() => {
+              setLogo("Rikesh");
+            }}
+            to={"/"}
           >
-            {logo}
-          </Heading></Link>
+            <Heading
+              as={"h5"}
+              fontSize={{ base: "20px", md: "22px", lg: "24px" }}
+              textTransform={"uppercase"}
+            >
+              {logo}
+            </Heading>
+          </Link>
 
           {/* navitem right */}
           <Box position={{ lg: "relative", md: "unset" }}>
             {/* burger item */}
-            <Box className="burger_Curseo" onClick={handelNavItem} >
+            <Box className="burger_Curseo" onClick={handelNavItem}>
               <Image width={7} src={burger} />
             </Box>
             {/* mobile item  */}
@@ -120,13 +146,12 @@ function Navbar() {
               w={"100%"}
               top={{ md: 0, sm: "58px", base: "60px" }}
               padding={{ md: "0px 0px", base: "10px 20px" }}
-              bg={"#1b1b1b"}
+              bg={{base:"rgba(51, 51, 51, 0.92)",md:"none"}}
               zIndex={99}
             >
               <Flex
                 sx={{
                   flexDirection: { md: "row", sm: "column", base: "column" },
-                  // display : { md:'block',sm:'none' }
                 }}
                 gap={10}
                 textTransform={"uppercase"}
@@ -146,10 +171,7 @@ function Navbar() {
           </Box>
         </Flex>
       </Box>
-
-      <Box>
-        <Outlet/>
-      </Box>
+      
     </>
   );
 }
