@@ -1,49 +1,48 @@
 import { Box, Heading, Image } from "@chakra-ui/react";
-import homeBg from "../../assets/images/homehome1.jpg";
+import homeBg from "../../assets/images/homehome1.webp";
 import bghome from "../../assets/images/bgHome-01.png";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Languages from "./Languages";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 function LandingPage() {
-  const boxRef = useRef<HTMLImageElement | null>(null);
-  const HomeHeading = useRef<HTMLHeadingElement | null>(null);
-
   const bgBlue = useRef<HTMLImageElement | null>(null);
   const homeArea = useRef<HTMLDivElement | null>(null);
+
+  const landingImages = useRef<HTMLDivElement | null>(null);
+
+  // hold state values
+  const [holdStateX, setHoldStateX] = useState<number>(0);
+  const [holdStateY, setHoldStateY] = useState<number>(0);
 
   // state for animation
 
   // opening animation
   useEffect(() => {
-      gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-      const ctx = gsap.context(() => {
-        const tl = gsap.timeline();
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 0.1 });
 
+      if (landingImages.current) {
         tl.fromTo(
-          boxRef.current,
-          { y: 200 },
-          { y: 0, ease: "expo.out", duration: 1 },
+          landingImages.current,
+          { y: 900 },
+          { y: 0, duration: 0.8, delay: 0.4, ease: "elastic.out(1,1.3)" },
           0
-        )
-          .fromTo(
-            HomeHeading.current,
-            { scale: 0.2 },
-            { scale: 1, duration: 1, ease: "expo.out" },
-            0
-          )
-          .to(".bg_home", { display: "block", ease: "elastic.out(1,0.3)" });
+        );
+      }
+
+      tl.to(bgBlue.current, {
+        display: "block",
       });
+    });
 
-      return () => {
-        ctx.revert();
-      };
+    return () => {
+      ctx.revert();
+    };
   }, []);
-
-  // hold state values
-  const [holdStateX, setHoldStateX] = useState<number>(0);
-  const [holdStateY, setHoldStateY] = useState<number>(0);
 
   // Animation for bg
   useEffect(() => {
@@ -92,18 +91,35 @@ function LandingPage() {
       homeAreaDiv?.removeEventListener("mousemove", moveMouse);
     };
   }, [holdStateX, holdStateY]);
+  
+  // languages object
+  const languageObj = [
+    "javascript",
+    "php",
+    "typescript",
+    "react",
+    "node js",
+    "wordpress",
+    "tailwind",
+    "firewall",
+  ];
+
+
+// styling single languag 
+const langaugeCSS = {
+  flex:'1 0 25%',
+  fontSize:'90px'
+} 
 
   return (
     <Box
       ref={homeArea}
+      overflow={"hidden"}
       className="landing_container"
       height="fit-content"
       width={{ sm: "100%", base: "95%" }}
       margin="auto"
     >
-      {/* <Box display={'none'} >
-      <AnimateCircle/>
-      </Box> */}
       <Box
         height={{
           xl: "90vh",
@@ -115,10 +131,11 @@ function LandingPage() {
         position="relative"
         className="landing_page_wrap"
       >
-        <Box className="landing_text">
+        <Box
+         className="landing_text">
           <Heading
             fontSize={{
-              xl: "66px",
+              xl: "70px",
               lg: "65px",
               md: "60px",
               sm: "55px",
@@ -127,20 +144,24 @@ function LandingPage() {
             py={{ md: "20px", sm: "20px", base: "30px" }}
             fontWeight={600}
             textAlign="center"
-            ref={HomeHeading}
-          >
-            WELCOME TO MY <span style={{ color: "#6dcbdb" }}>PORTFOLIO.</span>
+            position={'relative'}
+            top={7}
+            color={'#DEDEDE'}
+  >
+            welcome to my <span style={{ color: "#6dcbdb" }}>portfolio.</span>
           </Heading>
         </Box>
+
         <Box position="absolute" bottom={0} width="100%">
           <Box display="flex" justifyContent="center">
             <Box
-            overflow={{md:'visible',base:'hidden'}}
-              borderBottom="7px solid black"
+              ref={landingImages}
+              overflow={{ md: "visible", base: "hidden" }}
               position="relative"
+              top={7}
               className="landing_images"
               width={{
-                xl: "52%",
+                xl: "42%",
                 lg: "60%",
                 md: "80%",
                 sm: "90%",
@@ -149,7 +170,6 @@ function LandingPage() {
               height="auto"
             >
               <Image
-                ref={boxRef}
                 height="100%"
                 zIndex={10}
                 position="relative"
@@ -158,9 +178,9 @@ function LandingPage() {
               />
               <Image
                 ref={bgBlue}
+                display={"none"}
                 height={"100%"}
                 width={"100%"}
-                display="none"
                 className="bg_home"
                 position="absolute"
                 top={{ md: "-20px", sm: "0", base: 0 }}
@@ -171,6 +191,29 @@ function LandingPage() {
             </Box>
           </Box>
         </Box>
+
+        {/* <Box className="bg_text_area">
+            <Box display={"flex"}  flexWrap={"wrap"} >
+            {languageObj &&
+              languageObj.map((item, index) => {
+
+              // if(index<4)
+                
+                return (
+                  <>
+                   <Box  sx={langaugeCSS} >
+                   <Languages key={index} langauge={item} />
+                   </Box>
+                  </>
+                );
+                
+
+              })}
+          </Box>
+        </Box> */}
+
+
+
       </Box>
     </Box>
   );

@@ -1,29 +1,22 @@
-import { Box, Heading, Image, Flex, Text,Hide } from "@chakra-ui/react";
+import { Box, Heading, Image, Flex, Text } from "@chakra-ui/react";
 import Ring from "../../assets/images/ring.svg";
 import Vector from "../../assets/images/vector.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import TextPlugin from 'gsap/TextPlugin';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { Link } from "react-router-dom";
 
-
+gsap.registerPlugin(ScrollTrigger ,TextPlugin) ;
 
 function AboutPage() {
 
   const ImageRef = useRef<HTMLDivElement>(null);
   const aboutHeading = useRef<HTMLHeadingElement>(null);
 
+  useEffect(() => {       
 
-  useEffect(() => {
-
-    
-
-    gsap.registerPlugin(ScrollTrigger) ;
-    gsap.registerPlugin(TextPlugin);
-
-    var ctx: any = null;
-    ctx = gsap.context(() => {
-
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline( {
 
         scrollTrigger: {
@@ -36,11 +29,7 @@ function AboutPage() {
 
       tl.to( aboutHeading.current ,{  duration:1.5 , text:{ value:"HI, I AM RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS"} } );
 
-        tl.fromTo( ImageRef.current , { scale:0  } , { scale:1,ease: "elastic.out(1,0.3)",delay:2} );
-
-        sessionStorage.setItem("playedAnimation", "true");
-
-        
+      tl.fromTo( ImageRef.current , { scale:0  } , { scale:1,ease: "elastic.out(1,0.3)",delay:1.3} );        
 
     });
 
@@ -53,43 +42,54 @@ function AboutPage() {
 
   return (
     <>
-       <Box className="about_page_wrap" py={40}  mb={{lg:30,base:5}}>
+       <Box overflow={'hidden'}  className="about_page_wrap" py={44}  mb={{lg:30,base:5}}>
         <Heading
           ref={aboutHeading}
           className="heading_about"
-          fontSize={{ lg: '50px', md: '32px', sm: '30px', base: '30px' }}
+          fontSize={{ lg: '71px', md: '32px', sm: '30px', base: '30px' }}
           fontWeight={600}
+          lineHeight={1.3}
           as="h2"
           height={{ sm: '160px',base:"200px" }}
         >
         </Heading>
 
-        <Flex
+        <Flex         
           direction={{ lg: "row", md: "row", sm: "column", base: "column" }}
-          py={{ lg: "70px", sm: "50px", base: "30px" }}
+          py={{ lg: "75px", sm: "50px", base: "30px" }}
+          gap={{lg:10}}
         >
           <Box
             display={"flex"}
-            alignItems={"center"}
+            flexDirection={"column"}
+            gap={10}
             width={{ lg: "60%", md: "60%", sm: "100%", base: "100%" }}
             className="about_text"
           >
             <Text
               fontSize={{ lg: "24px", md: "20px", sm: "20px", base: "18px" }}
             >
-               I've been exploring the online world for more than a year. I really love creating websites and using computer skills to make cool stuff. I'm super excited to learn even more and find new ways to make neat things online.
+              Exploring the digital world for over a year, I'm Rikesh a creative enthusiast crafting digital presence through web design and programming. Excited to further delve into this platform, uncovering new realms of innovation.
             </Text>
+
+            <Link 
+            onClick={ ()=>{window.scroll(0,0)} }
+            to={'/webworks'} >
+              <Text fontSize={'18px'} color={'#1C97DD'} >Learn More about me</Text>
+            </Link>
+            
           </Box>
 
           <Box           
             position={"relative"}
-            width={{ lg: "40%", md: "40%", sm: "50%", base: "80%" }}
+            bottom={4}
+            width={{ lg: "35%", md: "40%", sm: "50%", base: "80%" }}
             margin={{ md: "unset", sm: "auto", base: "auto" }}
             py={{ md: "unset", base: "60px" }}
             className="ring_divs"
           >
             <Box
-              width={{ lg: "65%", md: "60%", base: "80%" }}
+              width={{ lg: "45%", md: "60%", base: "80%" }}
               margin={"auto"}
               className="ring"
             >
@@ -111,7 +111,14 @@ function AboutPage() {
               </Flex>
             </Box>
           </Box>
+
         </Flex>
+
+
+        <Box className="just a border"  borderBottom={'3px solid'} borderBottomWidth={2}  borderColor={'#CDF0F8'} width={'40%'}>
+
+        </Box>
+
       </Box>
     </>
   );

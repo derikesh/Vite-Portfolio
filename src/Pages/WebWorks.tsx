@@ -49,11 +49,11 @@ function WebWorks() {
         />
 
         <Box px={{ sm: 0, base: "15px" }} className="webWork_wrap">
-          {dataWorks &&
+          { dataWorks ? dataWorks &&
             Object.keys(dataWorks).map((item: any, index) => {
               const workDatas = dataWorks[item];
               return <SingleWork key={index} title={workDatas.title} link={workDatas.link} description={workDatas.description} techStack={workDatas.techStack} imageURL={workDatas.imageURL} />;
-            })}
+            }) : "loading...."  }
         </Box>
       </Box>
     </>

@@ -26,7 +26,7 @@ function Header({ sectionTitle }: sectionTitleProp) {
         const tl = gsap.timeline( {
             scrollTrigger:{
                 trigger: aboutHeading.current,
-                start: "0px 60%",
+                start: "top 80%",
                 end: "bottom bottom",
                 toggleActions: "play none none none",
             }

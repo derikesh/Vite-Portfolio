@@ -43,7 +43,7 @@ function FigmaWorks() {
       />
 
       <Box px={{ sm: 0, base: "15px" }} className="webWork_wrap">
-        {dataWorks &&
+       { dataWorks ?  dataWorks &&
           Object.keys(dataWorks).map((item: any, index) => {
             const workDatas = dataWorks[item];
             return (
@@ -55,7 +55,7 @@ function FigmaWorks() {
                 imageURL={workDatas.imageURL}
               />
             );
-          })}
+          }) : "loading....." }
       </Box>
     </>
   );

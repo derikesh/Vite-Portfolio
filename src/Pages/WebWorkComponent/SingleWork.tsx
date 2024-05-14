@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { sitelinks } from "../../Datas/siteLinks";
 
-import { dataTechProp } from "../HomePageComponents/Projects";
+import { dataTechProp } from "../HomePageComponents/Expertise";
 
 import AnimationLine from "../HomePageComponents/Component/AnimationLine";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-interface SingleWorkProps {
+export interface SingleWorkProps {
   title: string;
   description: string;
   techStack?: Array<string>;

@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 // icon
 import burger from "../../assets/images/icons/burger.svg";
 
@@ -118,6 +119,7 @@ function Navbar() {
         >
           <Link
             onClick={() => {
+              window.scroll(0,0)
               setLogo("Rikesh");
             }}
             to={"/"}

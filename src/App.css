@@ -51,3 +51,8 @@ h5 {
 }
 
 
+.single_expert:hover .single_icons {
+  opacity: 1 !important;
+  filter: none;
+  transition: all 0.3s ease-in-out;
+}

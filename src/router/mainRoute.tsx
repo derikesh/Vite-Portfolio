@@ -18,7 +18,7 @@ function MainRoute() {
         <Route path="/webworks" element={<WebWorks />} />
         <Route path="/figma" element={<FigmaWorks />} />
         <Route path="/resume" element={<Resume/>} />
-        <Route path="/source-code" element={<SorcePage/>} />
+        <Route path="/source-code" element={<SorcePage/>} />        
       </Routes>
     </>
   );

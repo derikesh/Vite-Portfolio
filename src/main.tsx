@@ -10,7 +10,7 @@ import FirebaseProvider from "./firebase/Firebase";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
-);
+)
 root.render(
   <ChakraProvider theme={customeTheme}>
     <React.StrictMode>

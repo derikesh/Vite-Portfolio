@@ -1,50 +1,49 @@
-import './App.css';
-import Navbar from './components/navbar/Navbar';
-import MainRoute from './router/mainRoute';
-import { Box } from '@chakra-ui/react';
-import Footer from './components/Footer';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import Navbar from "./components/navbar/Navbar";
+import MainRoute from "./router/mainRoute";
+import { Box } from "@chakra-ui/react";
+import Footer from "./components/Footer";
+import { useEffect, useState } from "react";
+import graindImage from "./assets/images/GRAIN.png";
 
-import Loading from './components/Loading';
+import Loading from "./components/Loading";
 
 function App() {
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const [loading, setLoading] = useState<boolean>(true)
-
-  useEffect( ()=>{
-
-    setTimeout( ()=>{
+  useEffect(() => {
+    setTimeout(() => {
       setLoading(false);
-    },2000 )
-
-  } ,[])
+    }, 2000);
+  }, []);
+  
 
   return (
     <>
+      <Box className="site_wrap">
+        {/* <AnimateCircle /> */}
 
-    
-    <Box className='site_wrap' >
-    {/* <AnimateCircle /> */}
-
-    { loading ? (
-     <Loading/>
-    ) : (
-      <>
-        <Box>
-      <Box position={"relative"} maxW={'1360px'} width={ { sm:'90%',base:'100%' } } margin={'auto'}  >
-
-      <Navbar/>      
-      <MainRoute/>
-      <Footer/>
-
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <Box>
+              <Box
+                position={"relative"}
+                maxW={"1360px"}
+                width={{ sm: "90%", base: "100%" }}
+                margin={"auto"}
+              >
+                <Navbar />
+                <Box>
+                  <MainRoute />
+                </Box>
+                <Footer />
+              </Box>
+            </Box>
+          </>
+        )}
       </Box>
-       </Box>
-      </>
-    )}
-
-     
-    </Box>
-
     </>
   );
 }

@@ -1,48 +1,33 @@
-import { Box, Flex} from "@chakra-ui/react";
-import AnimateCircle from "../components/navbar/CircleAnimte";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import AboutPage from "./HomePageComponents/About";
 import LandingPage from "./HomePageComponents/LandingPage";
-import Projects from "./HomePageComponents/Projects";
-import Illustration from "./HomePageComponents/Illustration";
-import FigmaSection from "./HomePageComponents/FigmaSection";
-import { useEffect, useState } from "react";
+import Expertise from "./HomePageComponents/Expertise";
+import graindImage from "../assets/images/GRAIN.png"
+import Experience from "./HomePageComponents/Experience";
+import Porjects from "./HomePageComponents/Porjects";
+
 
 function HomePage() {
 
-      const [size, setSize] = useState<number | null>(null);
-      const [mobile, setMobile] = useState<boolean>(false);
-
-      useEffect( ()=>{
-
-          setSize(window.innerWidth);
-
-      } ,[size])
-
-
-      useEffect( ()=>{
-
-        if(size && size < 768){
-
-          setMobile(true);
-        }else{
-          setMobile(false);
-        }
-
-      } ,[size])
-
+  // let imageGrid = {
+  //   backgroundImage: `url(${graindImage})`,
+  // }
+ 
   return (
     <>
-      <AnimateCircle/>
-        <LandingPage />
-        <Box px={ {base:'15px'} } >
-        <AboutPage/>
-        <Projects/>
-        <Illustration/>
-        <FigmaSection/>
+      <Box overflow={"hidden"} >
+        {/* <Image src={graindImage}  opacity={1} width={"100%"} height={"100%"} objectFit={"cover"}  position={"fixed"} top={0} left={0}/>           */}
+      </Box>
+
+      <LandingPage />
+      <Box px={{ base: "15px" }}>
+        <AboutPage />
+        <Expertise />
+        <Experience/>
+        <Porjects/>
       </Box>
     </>
   );
 }
 
 export default HomePage;
- 

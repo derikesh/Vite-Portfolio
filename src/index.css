@@ -4,13 +4,22 @@ body {
   margin: 0;
  padding: 0;
  background: linear-gradient(180deg, #252525 0.59%, rgba(37, 37, 37, 0.62) 100%);
+ font-style: normal;
 }
 
 .site_wrap {
-  background: #1b1b1b ;
-  /* background: radial-gradient(circle, rgba(4,11,51,1) 0%, rgba(0,0,0,1) 88%); */
+  background: #121212 ;
+  width: '100%';
   color: white;
+  font-family: "News Cycle", sans-serif;
   min-height: 100vh;
+}
+
+
+.site_wrap h1 , .site_wrap h2 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .bg-slate { 
@@ -56,4 +65,16 @@ body {
 
 .sticky .active {
   color: #1de1e1;
+}
+
+.expContent:hover.expContent .expText {
+    opacity: 1;
+}
+
+.expList:hover .expord {
+  opacity: 1;
+}
+
+.overLay {
+  background: rgba(10, 10, 10, 0.76);
 }
