@@ -39,7 +39,7 @@ export default function SingleExp( {dataExp,indexNum} :SingleExpProps) {
       const transitionSingle = {
         transition:'0.2s ease-in',
         _hover:{
-            // boxShadow: '#1de1e1 0px 0px 20px -12px',
+            boxShadow: '#1de1e1 0px 0px 20px -12px',
             cursor:'pointer',
             transform:'scale(1.03)',
         }

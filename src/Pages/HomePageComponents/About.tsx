@@ -74,8 +74,8 @@ function AboutPage() {
 
             <Link 
             onClick={ ()=>{window.scroll(0,0)} }
-            to={'/webworks'} >
-              <Text fontSize={'18px'} color={'#1C97DD'} >Learn More about me</Text>
+            to={'/about'} >
+              <Text fontSize={'20px'} color={'#1C97DD'} >Learn More about me </Text>
             </Link>
             
           </Box>

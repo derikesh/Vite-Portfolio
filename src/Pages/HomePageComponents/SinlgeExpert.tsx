@@ -17,8 +17,6 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
   // ref
   const singleExpert = useRef<Array<HTMLDivElement | null>>([]);
 
-  // state for icons 
-  const [icons, setIcons] = useState<boolean | null>(false)
 
   let singleIndex = index;
 
@@ -51,7 +49,6 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
     _hover: {
       boxShadow: `0px 0px 26px 5px ${shadow}`,
       transition: 'all 0.3s ease-in-out',
-      cursor:'pointer',
       filter:'brightness(1.1'
     }
 
@@ -90,7 +87,7 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
         }
       }
 
-  } ,[icons])
+  } ,[])
 
 
 
@@ -99,16 +96,16 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
 
   return (
    <Box className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
-     <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={10} borderRadius={30} h={'420px'} border={`3px solid ${borderColor}`}>
-      <Flex fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
+     <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={10} borderRadius={30} h={'400px'} border={`3px solid ${borderColor}`}>
+      <Flex position={'relative'} zIndex={1}  fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
         <Heading>{title}</Heading>
         <Box>
           {/* <Image src={demoIcon} /> */}
         </Box>
       </Flex>
-      <Box py={6} className='expert_description'>
+      <Box py={6} position={'relative'} zIndex={1} className='expert_description'>
 
-        {description && <Text fontSize={'18px'}>{description}</Text>}
+        {description && <Text p={5} fontSize={'18px'}>{description}</Text>}
         {allTools && <Box fontSize={'18px'}>
           <ul>
             {allTools.map((item) => (
@@ -123,7 +120,7 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
           <Image  height={'100%'} width={'100%'} objectFit={'contain'} src={techArr[0]} />
         </Box>
 
-        <Box transition={'all 0.3s all-in-out'} className='single_icons' filter={'brightness(0) invert(1)'} opacity={0.13} position={'absolute'} bottom={index === 0 ? 6 : (index === 1 ? 24 : { xl: 20, base: 10 })} left={index === 0 ? 10 : (index === 1 ? 10 : { sm: 50, base: 10, lg: 250 })} width={'75px'} height={'auto'} >
+        <Box transition={'all 0.3s all-in-out'} className='single_icons' filter={'brightness(0) invert(1)'} opacity={0.13} position={'absolute'} bottom={index === 0 ? 6 : (index === 1 ? 5 : { xl: 20, base: 10 })} left={index === 0 ? 10 : (index === 1 ? 5 : { sm: 50, base: 10, lg: 250 })} width={'75px'} height={'auto'} >
           <Image  height={'100%'} width={'100%'} objectFit={'contain'} src={techArr[1]} />
         </Box>
 

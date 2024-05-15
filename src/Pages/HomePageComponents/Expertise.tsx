@@ -45,17 +45,17 @@ export interface ExpertDataProps {
 export let experData:Record<string,ExpertDataProps> = {
   frontend: {
     title: "Frontend Dev",
-    description:"Exploring the digital world for over a year, I'm Rikesh a creative enthusiast crafting digital presence through web design and programming. Excited to.",
+    description:"As a frontend developer I am proficient in Figma design, React, GSAP, motion, TypeScript, Chakra UI, and more,creating dynamic and visually appealing user interfaces.",
     tech: Object.values(dataTechProp),
   },
   backend: {
     title: "Backend Dev",
-    description:"Exploring the digital world for over a year, I'm Rikesh a creative enthusiast crafting digital presence through web design and programming. Excited to.",
+    description:"Begin frontend developer with backend expertise in Firebase, Node.js, and WordPress. I build sleek interfaces with strong features, using frontend tools for modern, responsive applications with backend integration.",
     tech: Object.values(dataTechProp),
   },
   tools:{
     title:'tools i use',
-    allTools:['notion','ubantu','git','github','vs code',' figma'],
+    allTools:['notion','ubuntu','git','github','vs code',' figma','illustrator'],
     tech:Object.values(dataTechProp)
   }
 };
@@ -70,7 +70,7 @@ function Expertise() {
         <Header sectionTitle="MY EXPERTISE" key={12} />
 
 
-        <Grid py={20} templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={6}>
+        <Grid py={{sm:28,base:10}} templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={6}>
 
           {experData && Object.values(experData).map((data, index) => (
             <GridItem key={index} width={"100%"} >

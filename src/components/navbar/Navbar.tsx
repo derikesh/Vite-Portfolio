@@ -26,6 +26,11 @@ function Navbar() {
       navLogo: "Rikesh",
     },
     {
+      navTitle: "About",
+      navPath: "/about",
+      navLogo: "About",
+    },
+    {
       navTitle: "Webworks",
       navPath: "/webworks",
       navLogo: "Webworks",
@@ -35,11 +40,7 @@ function Navbar() {
       navPath: "/figma",
       navLogo: "Figma",
     },
-    {
-      navTitle: "CV",
-      navPath: "/resume",
-      navLogo: "Resume",
-    },
+   
   ];
 
   // function to set display

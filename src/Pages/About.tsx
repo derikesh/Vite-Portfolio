@@ -24,7 +24,7 @@ function Resume() {
       <Box>
         
         <HeadingPage pageTitle="MORE ABOUT ME" color="white" />
-        { resume ? (<>  <Image width={"100%"} height={"100%"} src={resume.docs[0].data().image} /> </>) : "loading......"}
+        {/* { resume ? (<>  <Image width={"100%"} height={"100%"} src={resume.docs[0].data().image} /> </>) : "loading......"} */}
        
       </Box>
     </>

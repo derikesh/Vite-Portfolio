@@ -46,7 +46,7 @@ export default function Footer() {
 
   return (
     <>
-      <Box overflow={'hidden'} bg={'linear-gradient(180deg, #121212  12.85%, #040404 100%);'} py={"40px"}   width={{ sm: "100%", base: "100%" } } margin={"auto"}>
+      <Box  bg={'linear-gradient(180deg, #121212  12.85%, #040404 100%);'} py={"40px"}   width={{ sm: "100%", base: "100%" } } margin={"auto"}>
       <DemoFunction>
       <Flex direction={'column'} gap={{md:30,base:50}}  height={{ xl:'500px',md:'100%'} } maxW={'1360px'} mx={ {xl:'none',lg:'50px',sm:'30px',base:'20px' }} marginX={{lg:"auto",base:"10px"}} borderRadius={'20px'} border={"3px solid white"} padding={{lg:'40px',md:'30px',base:'10px'}} py={{lg:'20px',base:'90px'}} className="footer-wrap">
           <Heading py={{lg:10}} sx={headingStyle} >FIND ME IN </Heading>

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
   import HomePage from "../Pages/Home";
 import WebWorks from "../Pages/WebWorks";
 import FigmaWorks from "../Pages/FigmaWorks";
-import Resume from "../Pages/Resume";
+import About from "../Pages/About";
 import SorcePage from "../Pages/SorcePage";
 import { useEffect } from "react";
 
@@ -17,7 +17,7 @@ function MainRoute() {
         <Route path="/" index element={<HomePage />} />
         <Route path="/webworks" element={<WebWorks />} />
         <Route path="/figma" element={<FigmaWorks />} />
-        <Route path="/resume" element={<Resume/>} />
+        <Route path="/about" element={<About/>} />
         <Route path="/source-code" element={<SorcePage/>} />        
       </Routes>
     </>

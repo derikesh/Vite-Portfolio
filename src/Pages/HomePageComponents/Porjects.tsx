@@ -91,7 +91,7 @@ export default function Projects() {
                 md: "repeat(2, 1fr)",
                 lg: "repeat(3, 1fr)",
               }}
-              gap={{ sm: 8, base: 10 }}
+              gap={{ sm: 10, base: 10 }}
             >
 
               {dataWorks &&
