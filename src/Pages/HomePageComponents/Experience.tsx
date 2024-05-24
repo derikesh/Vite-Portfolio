@@ -10,6 +10,7 @@ export default function () {
     {
       date: 2021,
       Image: ImageWeb,
+      role: "Web Designer Inter",
       title: "Web Tech",
       description:
         "got intership as a web designer I worked on many design project and gain experience in handling clients and there requirement",
@@ -17,6 +18,7 @@ export default function () {
     {
       date: 2022,
       Image: techbal,
+      role: "Web Developer",
       title: "Techball",
       description:
         "My first remote job as a Web developer , working on project in wordpress and design with many sucessful project, got to experience the remote work culture and to manage time and work effeciently.",
@@ -24,6 +26,7 @@ export default function () {
     {
       date: "Present",
       Image: rikesh,
+      role: "Web Developer",
       title: "Freelancing",
       description:
         "Moved from wordpress to javascript framworks and libraries, working on react and nodejs project with some wordpress projects as well , learning new tools and technology.",
@@ -33,10 +36,10 @@ export default function () {
   return (
     <>
       <Box py={{sm:20,base:10}} className="experience_wrap">
-        <Header sectionTitle="Working Experience" />
+        <Header subTag={true} sectionTitle="Working Experience" />
 
         <Box py={{lg:28,sm:20,base:5}} className="experiences">
-          <Flex gap={{ lg: 20, sm: 10, base: 10 }} direction={"column"}>
+          <Flex py={8} gap={{ lg: 12, sm: 10, base: 10 }} direction={"column"}>
             {experience?.map((item, index) => (
               <SingleExp key={index} indexNum={index} dataExp={item} />
             ))}

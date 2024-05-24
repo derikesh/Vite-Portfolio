@@ -96,7 +96,7 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
 
   return (
    <Box className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
-     <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={10} borderRadius={30} h={'400px'} border={`3px solid ${borderColor}`}>
+    <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:10,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'400px',base:"330px"}} border={`3px solid ${borderColor}`}>
       <Flex position={'relative'} zIndex={1}  fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
         <Heading>{title}</Heading>
         <Box>
@@ -105,9 +105,9 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
       </Flex>
       <Box py={6} position={'relative'} zIndex={1} className='expert_description'>
 
-        {description && <Text p={5} fontSize={'18px'}>{description}</Text>}
+        {description && <Text p={{sm:5,base:0}} fontSize={'18px'}>{description}</Text>}
         {allTools && <Box fontSize={'18px'}>
-          <ul>
+          <ul style={{padding:'0px 20px'}} >
             {allTools.map((item) => (
               <li key={item}>{item}</li>
             ))}

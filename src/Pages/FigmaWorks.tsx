@@ -42,7 +42,7 @@ function FigmaWorks() {
         key={"figma"}
       />
 
-      <Box px={{ sm: 0, base: "15px" }} className="webWork_wrap">
+      <Box mt={{lg:28,sm:20,base:20}} px={{ sm: 0, base: "15px" }} className="webWork_wrap">
        { dataWorks ?  dataWorks &&
           Object.keys(dataWorks).map((item: any, index) => {
             const workDatas = dataWorks[item];

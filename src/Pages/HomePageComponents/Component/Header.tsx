@@ -6,10 +6,11 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 interface sectionTitleProp {
   sectionTitle: string;
+  subTag:boolean;
 }
 
 
-function Header({ sectionTitle }: sectionTitleProp) {
+function Header({ sectionTitle , subTag}: sectionTitleProp) {
 
     const valueTitle = sectionTitle;
     
@@ -49,9 +50,15 @@ function Header({ sectionTitle }: sectionTitleProp) {
         textTransform={'uppercase'}
         width={'fit-content'}
         m={'auto'}
-        height={"70px"}
+        height={{sm:"70px",base:"80px"}}
       >
       </Heading>
+    {  subTag  && <center>
+        <Text display={{sm:"block",base:'none'}} pt={3} fontSize={18} >
+        ( Click on tabs )
+        </Text>
+      </center> }
+      
     </>
   );
 }

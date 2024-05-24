@@ -139,7 +139,7 @@ const langaugeCSS = {
               lg: "65px",
               md: "60px",
               sm: "55px",
-              base: "38px",
+              base: "43px",
             }}
             py={{ md: "20px", sm: "20px", base: "30px" }}
             fontWeight={600}

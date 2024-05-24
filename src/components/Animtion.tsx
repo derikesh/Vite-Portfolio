@@ -13,13 +13,13 @@ export const DemoFunction = ( {children}:any )=>{
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: animationRef.current,
-          start: "-260px 70%",
+          start: "top 60%",
           end:'bottom center',
           toggleActions: 'play none none none', 
         },
       });
       const ctx = gsap.context(() => {
-          tl.from( animationRef.current,{ scale:0.7,y:200,duration:1,ease:"back.out(1.7)" } )
+          tl.to( animationRef.current,{ y:0,opacity:1,duration:1,ease:"back.out(1.7)" } )
       });
   
       return () => {
@@ -28,9 +28,10 @@ export const DemoFunction = ( {children}:any )=>{
     }, []);
 
     return (
-        <Box ref={animationRef} >
+        <Box opacity={'0'} ref={animationRef} >
             {children}
         </Box>
         )
 
 }
+

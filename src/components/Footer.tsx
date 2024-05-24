@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 // icons handel
 import linked from "../assets/images/icons/linkind.svg";
@@ -35,7 +35,7 @@ export default function Footer() {
    const ScrollToTopLink = ({ to, children }:any) => {
     const handleClick = () => {
       window.scrollTo(0, 0);
-    };
+    };   
   
     return (
       <Link to={to} onClick={handleClick}>
@@ -44,8 +44,11 @@ export default function Footer() {
     );
   };
 
+
+
   return (
-    <>
+    <>  
+
       <Box  bg={'linear-gradient(180deg, #121212  12.85%, #040404 100%);'} py={"40px"}   width={{ sm: "100%", base: "100%" } } margin={"auto"}>
       <DemoFunction>
       <Flex direction={'column'} gap={{md:30,base:50}}  height={{ xl:'500px',md:'100%'} } maxW={'1360px'} mx={ {xl:'none',lg:'50px',sm:'30px',base:'20px' }} marginX={{lg:"auto",base:"10px"}} borderRadius={'20px'} border={"3px solid white"} padding={{lg:'40px',md:'30px',base:'10px'}} py={{lg:'20px',base:'90px'}} className="footer-wrap">
@@ -65,8 +68,8 @@ export default function Footer() {
             </Flex>
 
             <Flex gap={10}  width={{lg:'50%',md:'100%',base:'100%'}} alignItems={{lg:'flex-end',md:'center'}} justifyContent={'center'} direction={"column"} className="links">
-                <ScrollToTopLink to={'/webworks'} >Visit Web Works</ScrollToTopLink>
-                <ScrollToTopLink to={'/figma'} >Visit Figma Desgin</ScrollToTopLink>
+                <ScrollToTopLink to={'/about'} ><Text borderBottom="2px solid white" >View About</Text></ScrollToTopLink>
+                <ScrollToTopLink to={'/figma'} ><Text borderBottom="2px solid white" >Visit Figma Desgin</Text></ScrollToTopLink>
                 <Box display={{md:"block",base:"none"}} ><ScrollToTopLink to={'/source-code'}><Text  borderBottom="2px solid white"  >Get Source Code</Text></ScrollToTopLink></Box>
 
             </Flex>

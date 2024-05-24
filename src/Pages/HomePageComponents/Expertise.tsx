@@ -66,14 +66,14 @@ function Expertise() {
 
   return (
     <>
-      <Box py={{sm:10,base:5}} pb={40} className="expertise_wrap">
-        <Header sectionTitle="MY EXPERTISE" key={12} />
+      <Box py={{sm:10,base:5}} pb={{sm:40,base:10}} className="expertise_wrap">
+        <Header subTag={false} sectionTitle="MY EXPERTISE" key={12} />
 
 
-        <Grid py={{sm:28,base:10}} templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={6}>
+        <Grid py={{sm:28,base:10}} templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{sm:6,base:10}}>
 
           {experData && Object.values(experData).map((data, index) => (
-            <GridItem key={index} width={"100%"} >
+            <GridItem key={index} width={{sm:"100%",base:"95%"}} margin={'auto'}>
               <SinlgeExpert index={index} expertData={data} />
             </GridItem>
           ))}

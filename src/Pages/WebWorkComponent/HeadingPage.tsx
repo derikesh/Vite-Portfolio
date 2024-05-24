@@ -28,7 +28,7 @@ export default function HeadingPage({ pageTitle , pageMain, color }: HeadingProp
 
   return (
     <>
-      <Flex direction={"column"} position={"relative"} width={'100%'} mb={{lg:36,base:20}} h={{lg:'50vh',md:'50vh',base:'40vh'}}>
+      <Flex direction={"column"} position={"relative"} width={'100%'} h={{lg:'45vh',md:'50vh',base:'40vh'}}>
         <Heading
           ref={headingRef}
           alignItems={'center'}
@@ -45,8 +45,7 @@ export default function HeadingPage({ pageTitle , pageMain, color }: HeadingProp
         >
         </Heading>
 
-      <Box position={"absolute"} height={{md:"8px",base:"6px"}} width={"100%"} opacity={"0.8"} zIndex={1} bg={"linear-gradient(90deg, rgba(29, 29, 29, 0.76) 0%, #656564 53.65%, rgba(29, 29, 29, 0.67) 100%)"} bottom={0} className='borderBcolor'></Box>
-      <Box position={"absolute"} height={{md:"8px",base:"6px"}} width={"100%"} bg={"#252525"} bottom={0} className='borderBcolor'></Box>
+      <Box borderRadius={'50%'} position={"absolute"} height={{md:"8px",base:"6px"}} width={"100%"} opacity={"0.8"} zIndex={1} bg={"linear-gradient(90deg, rgb(18, 18, 18) 0%, #474747 53.65%, rgba(29, 29, 29, 0.67) 100%)"} bottom={0} className='borderBcolor'></Box>
 
 
       </Flex>

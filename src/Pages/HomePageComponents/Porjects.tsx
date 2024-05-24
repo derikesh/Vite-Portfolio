@@ -1,11 +1,12 @@
 import { Box, Button, Flex, Grid, GridItem } from "@chakra-ui/react";
 import Header from "./Component/Header";
 import { Link } from "react-router-dom";
-import { dataTechProp } from "../HomePageComponents/Expertise";
 import SingleProjects from "./SingleProjects";
 import { useFirebase } from "../../firebase/Firebase";
 import { useEffect, useState } from "react";
 import LoadingGrid from "./LoadingGrid";
+import { useInView } from "react-intersection-observer";
+import { wrap } from "gsap";
 
 export default function Projects() {
   const [dataW, setDataW] = useState<Array<object> | null>(null);
@@ -14,11 +15,15 @@ export default function Projects() {
 
   const [webData, setwebData] = useState<boolean>(true);
 
+  const { ref , inView , entry } = useInView({
+    threshold: 0,
+  });
+
   const firebase = useFirebase();
 
   // demo works
   useEffect(() => {
-    if (webData) {
+    if (webData && inView) {
       firebase
         .getWebWorksData?.()
         .then((data) => {
@@ -37,13 +42,15 @@ export default function Projects() {
           console.log(err);
         });
     }
-  }, [webData]);
+  }, [webData,inView]);
 
   useEffect(() => {
     if (dataW) {
       dataW.forEach((item: any) => {
         const dataObject = item.data().projectCollection;
-        setDataWorks(dataObject);
+        setTimeout(()=>{
+          setDataWorks(dataObject);
+        }, 1000 )
       });
     }
   }, [dataW]);
@@ -51,15 +58,16 @@ export default function Projects() {
   return (
     <>
       <Box py={20} className="projects_wrap" marginLeft="auto">
-        <Header sectionTitle="Projects" key={12} />
-        <Box py={24} className="wrap_single_projects">
-          <Flex justifyContent="flex-end" gap={4} marginBottom={4}>
+        <Header subTag={false} sectionTitle="Projects" key={12} />
+        <Box ref={ref} py={24} className="wrap_single_projects">
+          <Flex justifyContent={{sm:'flex-end',base:'flex-start'}} gap={4} marginBottom={10}>
             <Button
               paddingX={5}
-              py={2}
+              py={3}
               _hover={{ backgroundColor: "blue.700" }}
               onClick={() => {
                 setwebData(true);
+                setDataWorks(null);
               }}
               border="1px solid white"
               borderRadius="md"
@@ -74,6 +82,7 @@ export default function Projects() {
               _hover={{ backgroundColor: "green.700" }}
               onClick={() => {
                 setwebData(false);
+                setDataWorks(null);
               }}
               border="1px solid white"
               borderRadius="md"
@@ -84,7 +93,7 @@ export default function Projects() {
           </Flex>
 
           {dataWorks ? (
-            <Grid
+            <Grid            
               pos={"relative"}
               templateColumns={{
                 base: "repeat(1, 1fr)",
@@ -96,19 +105,19 @@ export default function Projects() {
 
               {dataWorks &&
                 Object.keys(dataWorks).slice(0,6).map((item: any, index: number) => (
-                    <SingleProjects webData={webData} key={index} projectData={dataWorks[item]} />
+                    <SingleProjects webData={webData} index={index} key={index} projectData={dataWorks[item]} />
                 ))}
 
             </Grid>
           ) : (
-            <Flex gap={7} className="grid_loading" width={"100%"}>
+            <Flex gap={10} flexWrap={'wrap'} className="grid_loading" width={"100%"}>
               <LoadingGrid />
               <LoadingGrid />
               <LoadingGrid />
             </Flex>
           )}
         </Box>
-        <Box py={10} textAlign="center">
+        <Box py={0} textAlign="center">
           <Link
             onClick={() => {
               window.scrollTo(0, 0);

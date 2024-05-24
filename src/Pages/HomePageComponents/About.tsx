@@ -42,21 +42,21 @@ function AboutPage() {
 
   return (
     <>
-       <Box overflow={'hidden'}  className="about_page_wrap" py={44}  mb={{lg:30,base:5}}>
+       <Box overflow={'hidden'}  className="about_page_wrap" py={{sm:44,base:20}}  mb={{lg:30,base:5}}>
         <Heading
           ref={aboutHeading}
           className="heading_about"
-          fontSize={{ lg: '71px', md: '32px', sm: '30px', base: '30px' }}
+          fontSize={{ lg: '71px', md: '32px', sm: '42px', base: '36px' }}
           fontWeight={600}
           lineHeight={1.3}
           as="h2"
-          height={{ sm: '160px',base:"200px" }}
+          height={{ sm: '160px',base:"170px" }}
         >
         </Heading>
 
         <Flex         
           direction={{ lg: "row", md: "row", sm: "column", base: "column" }}
-          py={{ lg: "75px", sm: "50px", base: "30px" }}
+          py={{ lg: "75px", sm: "50px", base: "0px" }}
           gap={{lg:10}}
         >
           <Box
@@ -75,17 +75,17 @@ function AboutPage() {
             <Link 
             onClick={ ()=>{window.scroll(0,0)} }
             to={'/about'} >
-              <Text fontSize={'20px'} color={'#1C97DD'} >Learn More about me </Text>
+              <Text fontSize={{sm:'20px',base:18}} color={'#1C97DD'} >Learn More about me </Text>
             </Link>
             
           </Box>
 
           <Box           
             position={"relative"}
-            bottom={4}
-            width={{ lg: "35%", md: "40%", sm: "50%", base: "80%" }}
+            bottom={{sm:4,base:0}}
+            width={{ lg: "35%", md: "40%", sm: "50%", base: "65%" }}
             margin={{ md: "unset", sm: "auto", base: "auto" }}
-            py={{ md: "unset", base: "60px" }}
+            py={{ md: "unset", base: "80px" }}
             className="ring_divs"
           >
             <Box
