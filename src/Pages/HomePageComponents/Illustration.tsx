@@ -8,7 +8,7 @@ function Illustration() {
     <>
       <Box className="illustration_wrap" mb={60}>
         <Box className="header_section">
-          <Header sectionTitle="Illustration" />
+          <Header subTag={false} key={2} sectionTitle="Illustration" />
           <Box display={{md:"none",base:"block"}} >
           <Center  >( click on small images )</Center>
           </Box>
