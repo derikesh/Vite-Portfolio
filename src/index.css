@@ -55,10 +55,10 @@ body {
 }
 
 .sticky { 
-  background: rgba(51, 51, 51, 0.92);
+  background: rgb(7, 43, 47);
   border-radius: 50px;
   position: sticky;
-  top: 10px;
+  top: 20px;
   z-index: 1000;
   transition: 0.5s ease-in;
 }

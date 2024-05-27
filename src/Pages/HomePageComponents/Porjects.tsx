@@ -60,7 +60,7 @@ export default function Projects() {
       <Box py={20} className="projects_wrap" marginLeft="auto">
         <Header subTag={false} sectionTitle="Projects" key={12} />
         <Box ref={ref} py={24} className="wrap_single_projects">
-          <Flex justifyContent={{sm:'flex-end',base:'flex-start'}} gap={4} marginBottom={10}>
+          <Flex justifyContent={{sm:'flex-end',base:'flex-start'}} gap={4} marginBottom={14}>
             <Button
               paddingX={5}
               py={3}
@@ -98,7 +98,7 @@ export default function Projects() {
               templateColumns={{
                 base: "repeat(1, 1fr)",
                 md: "repeat(2, 1fr)",
-                lg: "repeat(3, 1fr)",
+                lg: "repeat(2, 1fr)",
               }}
               gap={{ sm: 10, base: 10 }}
             >
@@ -110,8 +110,7 @@ export default function Projects() {
 
             </Grid>
           ) : (
-            <Flex gap={10} flexWrap={'wrap'} className="grid_loading" width={"100%"}>
-              <LoadingGrid />
+            <Flex gap={10} flexWrap={{sm:'nowrap',base:'wrap'}} className="grid_loading" width={"100%"}>
               <LoadingGrid />
               <LoadingGrid />
             </Flex>

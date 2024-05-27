@@ -54,7 +54,8 @@ export default function SingleExp( {dataExp,indexNum} :SingleExpProps) {
    
 
     <DemoFunction>
-      <Flex  height={'auto'}  width={'fit-content'} margin={'auto'} alignItems={'center'} gap={{lg:20,sm:10}} className="single_exp">
+     
+ <Flex  height={'auto'}  width={'fit-content'} margin={'auto'} alignItems={'center'} gap={{lg:20,sm:10}} className="single_exp">
         <Box display={{lg:'block',sm:'block',base:'none'}} className="exp_date" >{dataExp.date}</Box>
              <Box display={{lg:'block',sm:'block',base:'none'}} width={{lg:'100px',sm:'30px'}} height={'2px'} bg={'white'} ></Box>
 

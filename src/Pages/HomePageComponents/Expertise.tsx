@@ -8,12 +8,12 @@ import wordpressIcon from "../../assets/images/icons/colors/wp.webp";
 import tailwindIcon from "../../assets/images/icons/colors/tw.png";
 import reactIcon from "../../assets/images/icons/colors/React-icon 1.svg";
 import typescriptIcon from "../../assets/images/icons/colors/tscript 1.svg";
-import firestore from "../../assets/images/icons/colors/fb.png";
+import firestore from "../../assets/images/icons/colors/firebase.svg";
 import node from "../../assets/images/icons/colors/node-js-icon-454x512-nztofx17 2.svg";
 import vsCdoe from "../../assets/images/icons/colors/VC.svg";
 import github from "../../assets/images/icons/colors/gittt.svg";
 import illu from "../../assets/images/icons/colors/notion.svg";
-import bootstrap from "../../assets/images/icons/colors/bootstrap.png";
+import bootstrap from "../../assets/images/icons/colors/bootstrap.svg";
 import motion from "../../assets/images/icons/colors/motion.svg";
 import gsapIcon from "../../assets/images/icons/colors/gsap.svg";
 import chakraUi from "../../assets/images/icons/colors/chakra.svg";
@@ -44,12 +44,12 @@ export interface ExpertDataProps {
 
 export let experData:Record<string,ExpertDataProps> = {
   frontend: {
-    title: "Frontend Dev",
+    title: "frontend Dev",
     description:"As a frontend developer I am proficient in Figma design, React, GSAP, motion, TypeScript, Chakra UI, and more,creating dynamic and visually appealing user interfaces.",
     tech: Object.values(dataTechProp),
   },
   backend: {
-    title: "Backend Dev",
+    title: "backend Dev",
     description:"Begin frontend developer with backend expertise in Firebase, Node.js, and WordPress. I build sleek interfaces with strong features, using frontend tools for modern, responsive applications with backend integration.",
     tech: Object.values(dataTechProp),
   },
@@ -66,7 +66,9 @@ function Expertise() {
 
   return (
     <>
-      <Box py={{sm:10,base:5}} pb={{sm:40,base:10}} className="expertise_wrap">
+      <Box position={'relative'} py={{sm:10,base:5}} pb={{sm:40,base:10}} className="expertise_wrap">
+
+
         <Header subTag={false} sectionTitle="MY EXPERTISE" key={12} />
 
 

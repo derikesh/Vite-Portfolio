@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import homeBg from "../../assets/images/homehome1.webp";
 import bghome from "../../assets/images/bgHome-01.png";
 import { useEffect, useRef, useState } from "react";
@@ -9,8 +9,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 function LandingPage() {
   const bgBlue = useRef<HTMLImageElement | null>(null);
   const homeArea = useRef<HTMLDivElement | null>(null);
-
   const landingImages = useRef<HTMLDivElement | null>(null);
+  const languageRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   // hold state values
   const [holdStateX, setHoldStateX] = useState<number>(0);
@@ -91,48 +91,71 @@ function LandingPage() {
       homeAreaDiv?.removeEventListener("mousemove", moveMouse);
     };
   }, [holdStateX, holdStateY]);
-  
-  // languages object
-  const languageObj = [
-    "javascript",
-    "php",
-    "typescript",
-    "react",
-    "node js",
-    "wordpress",
-    "tailwind",
-    "firewall",
-  ];
+
+  const languages = ["javascript", "php", "......", "typescript", "react", "node js", "wordpress", "tailwind", "firebase"];
+
+  // for hover effect 
 
 
-// styling single languag 
-const langaugeCSS = {
-  flex:'1 0 25%',
-  fontSize:'90px'
-} 
+ useEffect(()=>{
+
+  languageRefs.current.forEach((language, index) => {
+
+    gsap.to(language, {
+      cursor: "pointer",
+      opacity: 0.5,
+      duration:index* 0.4,
+      ease: "power1.out",
+      delay: 2,
+    });
+
+    language?.addEventListener("mouseover", (event) => {
+      gsap.to(event.target, {
+        cursor: "pointer",
+        scale:0.9,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power1.out",
+      });
+    });
+
+    language?.addEventListener("mouseleave", (event) => {
+      gsap.to(event.target, {
+        opacity: 0.3,
+        scale:1,
+        duration: 0.3,
+        ease: "power1.out",
+      });
+    });
+  });
+
+ },[])
+
 
   return (
     <Box
       ref={homeArea}
-      overflow={"hidden"}
       className="landing_container"
+      position={"relative"}
       height="fit-content"
       width={{ sm: "100%", base: "95%" }}
       margin="auto"
-    >
+    >      
+
       <Box
         height={{
           xl: "90vh",
           lg: "90vh",
           md: "90vh",
           sm: "90vh",
-          base: "85vh",
+          base: "80vh",
         }}
         position="relative"
         className="landing_page_wrap"
-      >
-        <Box
-         className="landing_text">
+        borderBottom={'2px solid white'}
+        overflow={'hidden'}
+>
+        <Box className="landing_text">
           <Heading
             fontSize={{
               xl: "70px",
@@ -144,15 +167,32 @@ const langaugeCSS = {
             py={{ md: "20px", sm: "20px", base: "30px" }}
             fontWeight={600}
             textAlign="center"
-            position={'relative'}
+            position={"relative"}
             top={7}
-            color={'#DEDEDE'}
-  >
+            color={"#DEDEDE"}
+          >
             welcome to my <span style={{ color: "#6dcbdb" }}>portfolio.</span>
           </Heading>
         </Box>
 
         <Box position="absolute" bottom={0} width="100%">
+
+        <Box display={{lg:'block',sm:'none',base:'none'}} position={"absolute"} width={"1626px"} bottom={28} left={-24}>
+        <Flex          
+          fontSize={"110px"}
+          marginBottom={-7}
+          className="landing_text_stroke"
+          gap={10}
+          flexWrap={"wrap"}
+        >
+          {languages.map((language, index) => (
+            <Text scale={1.3} key={index} mb={-16} opacity={0.1} ref={(ref) => (languageRefs.current[index] = ref)}>
+              {language}
+            </Text>
+          ))}
+        </Flex>
+      </Box>
+
           <Box display="flex" justifyContent="center">
             <Box
               ref={landingImages}
@@ -169,13 +209,7 @@ const langaugeCSS = {
               }}
               height="auto"
             >
-              <Image
-                height="100%"
-                zIndex={10}
-                position="relative"
-                width="100%"
-                src={homeBg}
-              />
+              <Image height="100%" zIndex={10} position="relative" width="100%" src={homeBg} />
               <Image
                 ref={bgBlue}
                 display={"none"}
@@ -191,29 +225,6 @@ const langaugeCSS = {
             </Box>
           </Box>
         </Box>
-
-        {/* <Box className="bg_text_area">
-            <Box display={"flex"}  flexWrap={"wrap"} >
-            {languageObj &&
-              languageObj.map((item, index) => {
-
-              // if(index<4)
-                
-                return (
-                  <>
-                   <Box  sx={langaugeCSS} >
-                   <Languages key={index} langauge={item} />
-                   </Box>
-                  </>
-                );
-                
-
-              })}
-          </Box>
-        </Box> */}
-
-
-
       </Box>
     </Box>
   );

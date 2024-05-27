@@ -35,11 +35,11 @@ export default function () {
 
   return (
     <>
-      <Box py={{sm:20,base:10}} className="experience_wrap">
+      <Box py={{sm:0,base:10}} className="experience_wrap">
         <Header subTag={true} sectionTitle="Working Experience" />
 
         <Box py={{lg:28,sm:20,base:5}} className="experiences">
-          <Flex py={8} gap={{ lg: 12, sm: 10, base: 10 }} direction={"column"}>
+          <Flex py={8} gap={{ lg: 16, sm: 10, base: 10 }} direction={"column"}>
             {experience?.map((item, index) => (
               <SingleExp key={index} indexNum={index} dataExp={item} />
             ))}

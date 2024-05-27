@@ -13,7 +13,7 @@ export const DemoFunction = ( {children}:any )=>{
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: animationRef.current,
-          start: "top 60%",
+          start: "top 70%",
           end:'bottom center',
           toggleActions: 'play none none none', 
         },

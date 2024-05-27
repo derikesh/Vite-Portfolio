@@ -44,17 +44,18 @@ function Header({ sectionTitle , subTag}: sectionTitleProp) {
       <Heading
         ref={aboutHeading}
         className="heading_about"
-        fontSize={{ lg: "50px", md: "32px", sm: "30px", base: "30px" }}
+        fontSize={{ lg: "56px", md: "32px", sm: "30px", base: "30px" }}
         fontWeight={600}
         as="h2"
         textTransform={'uppercase'}
         width={'fit-content'}
         m={'auto'}
+        color={'#E6E6E6'}
         height={{sm:"70px",base:"80px"}}
       >
       </Heading>
     {  subTag  && <center>
-        <Text display={{sm:"block",base:'none'}} pt={3} fontSize={18} >
+        <Text display={{sm:"block",base:'none'}} pt={8} fontSize={18} >
         ( Click on tabs )
         </Text>
       </center> }

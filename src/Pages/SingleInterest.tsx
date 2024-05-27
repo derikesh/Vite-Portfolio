@@ -18,14 +18,14 @@ export default function SingleInterest( {title, imageURL,index}: SingleInterestP
     const [xvalue, setXvalue] = useState<number>(0);
     const [yvalue, setYvalue] = useState<number>(-120);
 
-    gsap.set( ".single_intrest_img",{ xPercent:10,yPercent:-120 } )
+    gsap.set( ".single_intrest_img",{ xPercent:5,yPercent:-120 } )
     
     useEffect( ()=>{        
 
             let tl = gsap.timeline({
                 scrollTrigger:{
                     trigger:SingleInterest.current,
-                    start:'top 50%',
+                    start:'top 50%', 
                     end:'bottom 20%',
                     toggleActions:'play none none reverse'  
                 }
@@ -42,7 +42,7 @@ export default function SingleInterest( {title, imageURL,index}: SingleInterestP
                         setYvalue(e.clientY);   
                     } )
 
-                    item?.addEventListener( 'mouseenter',e =>{
+                    item?.addEventListener( 'mouseover',e =>{
                         setMouseEnter(true);
                     } )
 
@@ -60,9 +60,9 @@ export default function SingleInterest( {title, imageURL,index}: SingleInterestP
 
   return (
     <Box  position={'relative'} opacity={'0'} ref={  (el)=>SingleInterest.current[index]=el } py={20}>
-        <Heading transition={'0.7s ease-in'} fontSize={'70px'} as={'h2'} >{title}</Heading>
-        <Box className='single_intrest_img' width={'530px'} height={'auto'} position={'absolute'} top={yvalue} left={xvalue} >
-        { <Image opacity={mouseEnter ? 1 : 0} transition={'all 0.3s ease-in-out'} height={'100%'} width={'100%'} objectFit={'contain'} src={imageURL}  /> } 
+        <Heading transition={'0.7s ease-in'} fontSize={{md:'70px',sm:"30px",base:"40px"}} as={'h2'} >{title}</Heading>
+        <Box className='single_intrest_img' width={'600px'} height={'400px'} position={'absolute'} top={yvalue} left={xvalue} >
+        { <Image borderRadius={20} display={{sm:'block',base:'none'}}  filter={'grayscale(2)'} opacity={mouseEnter ? 1 : 0} transition={'all 0.3s ease-in-out'} height={'100%'} width={'100%'} objectFit={'cover'} src={imageURL}  /> } 
         </Box>
     </Box>
   )

@@ -27,7 +27,7 @@ function AboutPage() {
       },
     } );     
 
-      tl.to( aboutHeading.current ,{  duration:1.5 , text:{ value:"HI, I AM RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS"} } );
+      tl.to( aboutHeading.current ,{  duration:2 , text:{ value:"HI, I AM RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS"} } );
 
       tl.fromTo( ImageRef.current , { scale:0  } , { scale:1,ease: "elastic.out(1,0.3)",delay:1.3} );        
 
@@ -42,15 +42,16 @@ function AboutPage() {
 
   return (
     <>
-       <Box overflow={'hidden'}  className="about_page_wrap" py={{sm:44,base:20}}  mb={{lg:30,base:5}}>
+      <Box overflow={'hidden'}  className="about_page_wrap" py={{sm:36,base:20}}  mb={{lg:30,base:5}}>
         <Heading
           ref={aboutHeading}
           className="heading_about"
-          fontSize={{ lg: '71px', md: '32px', sm: '42px', base: '36px' }}
+          fontSize={{ lg: '74px', md: '32px', sm: '42px', base: '36px' }}
           fontWeight={600}
           lineHeight={1.3}
           as="h2"
-          height={{ sm: '160px',base:"170px" }}
+          color={'#E6E6E6'}
+          height={{ sm: '160px',base:"220px" }}
         >
         </Heading>
 

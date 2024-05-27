@@ -96,7 +96,7 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
 
   return (
    <Box className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
-    <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:10,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'400px',base:"330px"}} border={`3px solid ${borderColor}`}>
+    <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:10,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'420px',base:"330px"}} border={`1px solid ${borderColor}`}>
       <Flex position={'relative'} zIndex={1}  fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
         <Heading>{title}</Heading>
         <Box>

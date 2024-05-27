@@ -1,18 +1,11 @@
-import { Box, Flex, GridItem, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box } from '@chakra-ui/react'
 
 export default function () {
   return (
-                <Box  width={{ sm: "100%", base: "90%" }} margin={"auto"} className="single_projects" >
+                <Box  width={{ sm: "100%", base: "90%" }} margin={"auto"} position={'relative'} className="single_projects" >
                   <Box  position={"relative"} className="pro_image_sec">
-                    <Box borderTopRadius={10} height={["200px", "300px"]} width="100%" bg={"#252525"} ></Box>
-                  </Box>
-                  <Box px={10} py={["20px", "35px"]} bg={"#201F23"} borderBottomEndRadius={10} borderBottomLeftRadius={10} className="pro_text_section" >
-                    <Flex gap={4} color={"#E9E9E9"} direction={"column"}>
-                      <Box height={"35px"} width={"80%"} bg={"#252525"}></Box>
-                      <Text height={"20px"} width={"40%"} bg={"#252525"}></Text>
-                    </Flex>
-                  </Box>
+                    <Box borderRadius={10} height={["320px", "300px"]} width="100%" bg={"#252525"} ></Box>
+                  </Box>                 
                 </Box>
   )
 }

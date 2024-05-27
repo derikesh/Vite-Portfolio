@@ -117,6 +117,7 @@ function Navbar() {
           justifyContent={"space-between"}
           pb={ status ? "" : { md: "11px", sm: "16px", base: "16px" }}
           borderBottom={ status ? "" : "1px solid #DFDFDF"}
+          px={ status ? {md:10,sm:0,base:0} : '' }
         >
           <Link
             onClick={() => {

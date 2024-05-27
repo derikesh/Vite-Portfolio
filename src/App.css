@@ -59,11 +59,8 @@ h5 {
 
 .intersection_img img {
   object-fit: cover !important;
-  height: 100%;
-  width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-
+  object-position: top center;  
+  border-radius: 6px;
 }
 
 .single_projects:hover .intersection_img img {
@@ -75,3 +72,12 @@ h5 {
   background: #181818;
 }
 
+
+
+.landing_text_stroke {
+  -webkit-text-stroke: 1px white;
+  text-stroke: 1px white;
+  color: transparent;
+  font-weight: 900;
+  font-family: Londrina Solid ;
+}

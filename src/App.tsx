@@ -1,10 +1,10 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import MainRoute from "./router/mainRoute";
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
-import graindImage from "./assets/images/GRAIN.png";
+import imageGrid from "./assets/images/garin2.png"
 
 import Loading from "./components/Loading";
 
@@ -21,16 +21,19 @@ function App() {
   return (
     <>
       <Box className="site_wrap">
-        {/* <AnimateCircle /> */}
 
         {loading ? (
           <Loading />
         ) : (
           <>
+
+      <Box overflow={"visible"} >
+        <Image src={imageGrid}  opacity={1} width={"100%"} height={"100%"} objectFit={"cover"}  position={"fixed"} top={0} left={0}/>          
+      </Box>
             <Box>
               <Box
                 position={"relative"}
-                maxW={"1360px"}
+                maxW={"1366px"}
                 width={{ sm: "90%", base: "100%" }}
                 margin={"auto"}
               >

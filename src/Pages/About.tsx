@@ -3,9 +3,16 @@ import HeadingPage from "./WebWorkComponent/HeadingPage";
 import { useFirebase } from "../firebase/Firebase";
 import { useEffect, useRef, useState } from "react";
 import SingleInterest from "./SingleInterest";
-import ImageMusic from "../assets/images/sing.jpeg";
 import Header from "./HomePageComponents/Component/Header";
 import { DemoFunction } from "../components/Animtion";
+import { wrap } from "gsap";
+
+import ImageMusic from "../assets/images/sing.jpeg";
+import play from "../assets/images/about/play.jpg";
+import travel from "../assets/images/about/travel.jpg";
+import work from "../assets/images/about/build.jpg";
+import read from "../assets/images/about/book.jpg"
+
 
 function Resume() {
 
@@ -33,29 +40,29 @@ function Resume() {
 
     { 
       title: "really into sports" ,
-      image: ImageMusic
+      image: play
     },
 
     { 
       title: "Enjoy working out  " ,
-      image: ImageMusic
+      image: work
     },
 
     { 
       title: "Love Traveling" ,
-      image: ImageMusic
+      image: travel
     },
 
     { 
       title: "I do read sometimes" ,
-      image: ImageMusic
+      image: read
     }
   ]
 
 
   return (
     <>
-      <Box overflow={'hidden'} >
+      <Box px={{sm:0,base:5}} overflow={'hidden'} >
         
         <HeadingPage pageTitle="ABOUT ME" pageMain="ABOUT ME" color="cyan" />
       
@@ -64,22 +71,22 @@ function Resume() {
       <DemoFunction> 
       <Box  py={20} fontSize={"22px"}>
        <Heading pb={3} fontSize={'38px'} as={'h2'} >About</Heading>
-       <Text>Growing up, I was a curious kid. Everything was new and exciting, and I always had questions. This need to understand things never left. I'm still that curious person, always looking to learn and explore new things.</Text>
+       <Text fontSize={{md:"22px",base:"20px"}} >Growing up, I was a curious kid. Everything was new and exciting, and I always had questions. This need to understand things never left. I'm still that curious person, always looking to learn and explore new things.</Text>
        </Box>
       </DemoFunction>
 
            <DemoFunction>
-           <Flex borderBottom={'4px solid #616161'} py={'90px'} gap={80} alignItems={'center'} className="about_content first">              
+           <Flex flexWrap={{xl:'nowrap',sm:'wrap',base:'wrap'}} borderBottom={'4px solid #616161'} py={'90px'} gap={{'2xl':80,xl:40,lg:40,md:20,sm:20,base:10}} alignItems={'center'} className="about_content first">              
                 <Heading fontSize={'38px'} as={'h2'} >Education</Heading>
-                <Text fontSize={'18px'} >Currently</Text>
-                <Text fontSize={'18px'} >Pursuing a Bachelor's degree in Computer Science and Information Technology (CSIT) at Prime College, Kathmandu, Nepal.</Text>
+                <Text fontSize={'18px'} display={{lg:'block',md:'none',sm:'none',base:'none'}} >Currently</Text>
+                <Text fontSize={'18px'} >Bachelor's  in Computer Science and Information Technology (CSIT) at Prime College, Kathmandu, Nepal.</Text>
             </Flex> 
             </DemoFunction> 
 
 
             <Flex direction={'column'} borderBottom={'4px solid #616161'} py={'90px'} gap={20} className="about_content second">
                 <DemoFunction>
-                <Heading fontSize={'38px'} as={'h2'} >Interest</Heading>
+                <Heading fontSize={{md:'38px',sm:"30px",base:"30px"}} as={'h2'} >Interest</Heading>
                 </DemoFunction>
                  <Box ref={wrapInterest} >
                   { dataInterest.map( (item,index)=> (
@@ -92,7 +99,7 @@ function Resume() {
 
        <Box py={40} className="resume_wrap" >
         <Header sectionTitle="Resume" subTag={false}  />
-       { resume ? (<Box py={20} >  <Image width={"80%"} margin={'auto'} height={"100%"} src={resume.docs[0].data().image} /> </Box>) : "loading......"}
+       { resume ? (<Box py={20} >  <Image width={{sm:"80%",base:'100%'}} margin={'auto'} height={"100%"} src={resume.docs[0].data().image} /> </Box>) : "loading......"}
        </Box>
         </Box>    
 
