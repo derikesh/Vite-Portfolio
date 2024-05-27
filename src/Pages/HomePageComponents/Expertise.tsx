@@ -55,7 +55,7 @@ export let experData:Record<string,ExpertDataProps> = {
   },
   tools:{
     title:'tools i use',
-    allTools:['notion','ubuntu','git','github','vs code',' figma','illustrator'],
+    allTools:['notion','git','github','vs code',' figma','illustrator'],
     tech:Object.values(dataTechProp)
   }
 };

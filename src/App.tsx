@@ -9,7 +9,7 @@ import imageGrid from "./assets/images/garin2.png"
 import Loading from "./components/Loading";
 
 function App() {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {
