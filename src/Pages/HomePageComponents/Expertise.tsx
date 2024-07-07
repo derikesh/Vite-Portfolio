@@ -50,7 +50,7 @@ export let experData:Record<string,ExpertDataProps> = {
   },
   backend: {
     title: "backend Dev",
-    description:"Begin frontend developer with backend expertise in Firebase, Node.js, and WordPress. I build sleek interfaces with strong features, using frontend tools for modern, responsive applications with backend integration.",
+    description:"Begin frontend developer with backend expertise in Firebase and WordPress. I build sleek interfaces with strong features, using frontend tools for modern, responsive applications with backend integration.",
     tech: Object.values(dataTechProp),
   },
   tools:{

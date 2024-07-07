@@ -26,11 +26,6 @@ function Navbar() {
       navLogo: "Rikesh",
     },
     {
-      navTitle: "About",
-      navPath: "/about",
-      navLogo: "About",
-    },
-    {
       navTitle: "Webworks",
       navPath: "/webworks",
       navLogo: "Webworks",
