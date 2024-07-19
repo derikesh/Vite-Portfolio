@@ -5,6 +5,8 @@ import Expertise from "./HomePageComponents/Expertise";
 import AboutRedirect from "./AboutRedirect";
 import Experience from "./HomePageComponents/Experience";
 import Porjects from "./HomePageComponents/Porjects";
+import Illustration from "./HomePageComponents/Illustration";
+import WebWorks from "./WebWorkHome";
 
 
 function HomePage() {
@@ -13,6 +15,7 @@ function HomePage() {
   //   backgroundImage: `url(${graindImage})`,
   // }
  
+
   return (
     <>
   
@@ -21,8 +24,9 @@ function HomePage() {
       <Box px={{ base: "15px" }}>
         <AboutPage />
         <Expertise />
-        <Experience/>
-        <Porjects/>
+        <Illustration/>
+        {/* <Porjects/> */}
+        <WebWorks/>
         <AboutRedirect/>
       </Box>
     </>

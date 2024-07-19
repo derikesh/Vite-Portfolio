@@ -28,7 +28,7 @@ function App() {
           <>
 
       <Box overflow={"visible"} >
-        <Image src={imageGrid}  opacity={1} width={"100%"} height={"100%"} objectFit={"cover"}  position={"fixed"} top={0} left={0}/>          
+        <Image src={imageGrid} background={"radial-gradient(circle, rgba(0,39,46,1) 0%, rgba(0,0,0,1) 100%);"} opacity={1} width={"100%"} height={"100%"} objectFit={"cover"}  position={"fixed"} top={0} left={0}/>          
       </Box>
             <Box>
               <Box

@@ -17,6 +17,8 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
   // ref
   const singleExpert = useRef<Array<HTMLDivElement | null>>([]);
 
+  const [mouseOver, setmouseOver] = useState(false);
+
 
   let singleIndex = index;
 
@@ -28,17 +30,17 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
 
   if (singleIndex === 0) {
     techArr = tech.slice(0, 3);
-    bgColor = '#0F427E';
+    bgColor = '#000';
     shadow='#0F427E';
     borderColor = '#0F427E';
   } else if (singleIndex === 1) {
     techArr = tech.slice(3, 6);
-    bgColor = '#121212';
+    bgColor = '';
     shadow='#474747';
     borderColor = 'white';
   } else if (singleIndex === 2) {
     techArr = tech.slice(6, 9);
-    bgColor = '#2D2D2D';
+    bgColor = '#2d2d2d';
     shadow='#2D2D2D';
     borderColor = '#2D2D2D';
   }
@@ -95,7 +97,7 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
 
 
   return (
-   <Box className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
+   <Box onMouseOver={ ()=>setmouseOver(true) } _hover={ { cursor:"pointer" } } onMouseOut={ ()=>setmouseOver(false) } className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
     <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:10,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'420px',base:"330px"}} border={`1px solid ${borderColor}`}>
       <Flex position={'relative'} zIndex={1}  fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
         <Heading>{title}</Heading>
@@ -105,8 +107,8 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
       </Flex>
       <Box py={6} position={'relative'} zIndex={1} className='expert_description'>
 
-        {description && <Text p={{sm:5,base:0}} fontSize={'18px'}>{description}</Text>}
-        {allTools && <Box fontSize={'18px'}>
+        {description && <Text transition={"0.2s ease-in"} opacity={ {md: mouseOver ? 1 : 0 ,sm:1,base:1 } } p={{sm:5,base:0}} fontSize={'18px'}>{description}</Text>}
+        {allTools && <Box transition={"0.2s ease-in"} opacity={ {md: mouseOver ? 1 : 0 ,sm:1,base:1 } } fontSize={'18px'}>
           <ul style={{padding:'0px 20px'}} >
             {allTools.map((item) => (
               <li key={item}>{item}</li>

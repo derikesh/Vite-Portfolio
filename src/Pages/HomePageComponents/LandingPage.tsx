@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import homeBg from "../../assets/images/homehome1.webp";
-import bghome from "../../assets/images/bgHome-01.png";
+import homeBg from "../../assets/images/homehome1_mid_lightened.webp";
+import bghome from "../../assets/images/homebgbg.svg";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Languages from "./Languages";

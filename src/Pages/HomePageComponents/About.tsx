@@ -70,14 +70,14 @@ function AboutPage() {
             <Text
               fontSize={{ lg: "24px", md: "20px", sm: "20px", base: "18px" }}
             >
-              Exploring the digital world for over a year, I'm Rikesh a creative enthusiast crafting digital presence through web design and programming. Excited to further delve into this platform, uncovering new realms of innovation.
+             Versatile Frontend Developer aiming to grow as Software engineer, enthusiastic about developing diverse software applications with great UI designs, focusing on creating visually appealing and user-friendly experiences.
             </Text>
-
+{/* 
             <Link 
             onClick={ ()=>{window.scroll(0,0)} }
             to={'/about'} >
               <Text fontSize={{sm:'20px',base:18}} color={'#1C97DD'} >Learn More about me </Text>
-            </Link>
+            </Link> */}
             
           </Box>
 

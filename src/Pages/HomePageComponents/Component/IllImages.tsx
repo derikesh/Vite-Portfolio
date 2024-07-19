@@ -12,6 +12,7 @@ import { useRef, useEffect,useState } from "react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Box, Flex } from "@chakra-ui/layout";
+import { Image } from "@chakra-ui/react";
 
 function IllImages() {
 
@@ -92,18 +93,17 @@ function IllImages() {
               key={index}
               ref={ (el)=>imageRef.current[index] = el }
               className="single_img_wrap"
-              height={{ xl:"700px" ,lg:'600px',md:'500px',sm:'400px',base:'500px' }}  
+              height={{ xl:"720px" ,lg:'550px',md:'500px',sm:'400px',base:'500px' }}  
               transition={'all 0.2s ease'}    
               width={`${widthImgg}%`}        
             >
-              <LazyLoadImage                
+              <Image                
                 className="lazy_img"
                 key={index}
                 height={"100%"}
                 width={"100%"}
                 src={item.imagePath}
                 alt={item.imageAlt}
-                placeholder={<div>loading........</div>}
               />
             </Box>
           ))}

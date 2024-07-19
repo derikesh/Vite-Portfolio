@@ -58,7 +58,7 @@ export default function Projects() {
   return (
     <>
       <Box py={20} className="projects_wrap" marginLeft="auto">
-        <Header subTag={false} sectionTitle="Projects" key={12} />
+        <Header subTag={false} sectionTitle="Web Projects" key={12} />
         <Box ref={ref} py={24} className="wrap_single_projects">
           <Flex justifyContent={{sm:'flex-end',base:'flex-start'}} gap={4} marginBottom={14}>
             <Button
