@@ -46,7 +46,7 @@ function AboutPage() {
     };
   }, []);
 
-  return (
+  return (  
     <>
       <Box
         overflow={"hidden"}
@@ -57,7 +57,7 @@ function AboutPage() {
         <Heading
           ref={aboutHeading}
           className="heading_about"
-          fontSize={{ lg: "74px", md: "32px", sm: "42px", base: "36px" }}
+          fontSize={{ lg: "64px", md: "32px", sm: "42px", base: "36px" }}
           fontWeight={600}
           lineHeight={1.3}
           as="h2"

@@ -85,3 +85,98 @@ h5 {
   font-weight: 900;
   font-family: Londrina Solid ;
 }
+
+/* Language Tags Styling */
+.language-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Language Colors */
+.language-tag.javascript {
+  background: rgba(247, 223, 30, 0.1);
+  color: #F7DF1E;
+  border-color: #F7DF1E;
+}
+
+.language-tag.typescript {
+  background: rgba(0, 122, 204, 0.1);
+  color: #007ACC;
+  border-color: #007ACC;
+}
+
+.language-tag.react {
+  background: rgba(97, 219, 251, 0.1);
+  color: #61DAFB;
+  border-color: #61DAFB;
+}
+
+.language-tag.node {
+  background: rgba(104, 160, 99, 0.1);
+  color: #68A063;
+  border-color: #68A063;
+}
+
+.language-tag.python {
+  background: rgba(255, 182, 0, 0.1);
+  color: #FFB600;
+  border-color: #FFB600;
+}
+
+.language-tag.html {
+  background: rgba(227, 76, 38, 0.1);
+  color: #E34C26;
+  border-color: #E34C26;
+}
+
+.language-tag.css {
+  background: rgba(38, 77, 228, 0.1);
+  color: #264DE4;
+  border-color: #264DE4;
+}
+
+/* Hover Effects */
+.language-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.language-tag.javascript:hover {
+  background: #F7DF1E;
+  color: #000;
+}
+
+.language-tag.typescript:hover {
+  background: #007ACC;
+  color: #fff;
+}
+
+.language-tag.react:hover {
+  background: #61DAFB;
+  color: #000;
+}
+
+.language-tag.node:hover {
+  background: #68A063;
+  color: #fff;
+}
+
+.language-tag.python:hover {
+  background: #FFB600;
+  color: #000;
+}
+
+.language-tag.html:hover {
+  background: #E34C26;
+  color: #fff;
+}
+
+.language-tag.css:hover {
+  background: #264DE4;
+  color: #fff;
+}

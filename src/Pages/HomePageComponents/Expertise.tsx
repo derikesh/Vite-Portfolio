@@ -17,7 +17,9 @@ import bootstrap from "../../assets/images/icons/colors/bootstrap.svg";
 import motion from "../../assets/images/icons/colors/motion.svg";
 import gsapIcon from "../../assets/images/icons/colors/gsap.svg";
 import chakraUi from "../../assets/images/icons/colors/chakra.svg";
-
+import mongodb from '../../assets/images/icons/mongodb.svg';
+import nextjs from '../../assets/images/icons/nextjs.png';
+import express from '../../assets/images/icons/express.webp';
 
 export const dataTechProp: Record<string, string> = {
   react: reactIcon,
@@ -32,7 +34,10 @@ export const dataTechProp: Record<string, string> = {
   bootstrap:bootstrap,
   motion:motion,
   gsap:gsapIcon,
-  chakraUi:chakraUi
+  chakraUi:chakraUi,
+  mongo:mongodb,
+  next:nextjs,
+  express:express
 };
 
 export interface ExpertDataProps {

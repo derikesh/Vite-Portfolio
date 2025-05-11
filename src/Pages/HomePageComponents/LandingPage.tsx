@@ -3,7 +3,6 @@ import homeBg from "../../assets/images/homehome1_mid_lightened.webp";
 import bghome from "../../assets/images/homebgbg.svg";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Languages from "./Languages";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 function LandingPage() {
@@ -92,7 +91,17 @@ function LandingPage() {
     };
   }, [holdStateX, holdStateY]);
 
-  const languages = ["javascript", "php", "GSAP", "typescript", "react", "node js", "wordpress","..", "tailwind", "firebase",];
+  const languages = [
+    { name: "javascript", color: "#F7DF1E" },
+    { name: "php", color: "#777BB4" },
+    { name: "GSAP", color: "#88CE02" },
+    { name: "typescript", color: "#007ACC" },
+    { name: "react", color: "#61DAFB" },
+    { name: "node js", color: "#68A063" },
+    { name: "wordpress", color: "#21759B" },
+    { name: "tailwind", color: "#06B6D4" },
+    { name: "firebase", color: "#FFCA28" }
+  ];
 
   // for hover effect 
 
@@ -112,17 +121,20 @@ function LandingPage() {
     language?.addEventListener("mouseover", (event) => {
       gsap.to(event.target, {
         cursor: "pointer",
-        scale:0.9,
-        opacity: 1,
+        scale: 0.9,
+        opacity: 0.8,
         duration: 0.3,
+        textShadow: `0 0 15px ${languages[index].color}`,
         ease: "power1.out",
       });
     });
 
     language?.addEventListener("mouseleave", (event) => {
       gsap.to(event.target, {
-        opacity: 0.3,
-        scale:1,
+        opacity: 0.2,
+        scale: 1,
+        color: "unset",
+        textShadow: "none",
         duration: 0.3,
         ease: "power1.out",
       });
@@ -158,7 +170,7 @@ function LandingPage() {
         <Box className="landing_text">
           <Heading
             fontSize={{
-              xl: "60px",
+              xl: "60px",  
               lg: "65px",
               md: "60px",
               sm: "55px",
@@ -186,8 +198,14 @@ function LandingPage() {
           flexWrap={"wrap"}
         >
           {languages.map((language, index) => (
-            <Text scale={1.3} key={index} mb={-16} opacity={0.1} ref={(ref) => (languageRefs.current[index] = ref)}>
-              {language}
+            <Text 
+              scale={1.3} 
+              key={index} 
+              mb={-16} 
+              opacity={0.1} 
+              ref={(ref) => (languageRefs.current[index] = ref)}
+            >
+              {language.name}
             </Text>
           ))}
         </Flex>

@@ -77,7 +77,7 @@ export default function SingleWork({
           >
             {techStack ? (
               <Flex gap={3} className="tech_stack">
-                <Box sx={font18}>TECH STACK :</Box>
+                <Box sx={{fontSize: { lg: "16px",base: "14px" }}}>TECH STACK :</Box>
                 {techStack?.map((item: string) => (
                   <Link
                     target="_blank"
