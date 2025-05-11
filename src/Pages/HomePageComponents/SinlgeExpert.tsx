@@ -12,13 +12,12 @@ interface singleProps {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function SinlgeExpert({ expertData: { title, description, tech, allTools }, index }: singleProps) {
+export default function SinlgeExpert({ expertData: { title, description, tech }, index }: singleProps) {
 
   // ref
   const singleExpert = useRef<Array<HTMLDivElement | null>>([]);
 
   const [mouseOver, setmouseOver] = useState(false);
-
 
   let singleIndex = index;
 
@@ -45,7 +44,6 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
     borderColor = '#2D2D2D';
   }
 
-
   let shadownIt = {
     transition: 'all 0.3s ease-in-out',
     _hover: {
@@ -53,16 +51,11 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
       transition: 'all 0.3s ease-in-out',
       filter:'brightness(1.1'
     }
-
   }
 
   // animation for single expert
 
-
-
-
   useEffect( ()=>{
-
     const tl = gsap.timeline({
       scrollTrigger:{
         trigger: singleExpert.current,
@@ -72,45 +65,32 @@ export default function SinlgeExpert({ expertData: { title, description, tech, a
         // markers:true,
       }
     })
-
       const ctx = gsap.context( ()=>{
-
         singleExpert.current && singleExpert.current.forEach( (item,index)=>{
-
           tl.from( item , { duration:0.6+index*0.5 , y:200 , opacity:0,ease: "elastic.out(0.3,6)" })
-            
         } ) 
-
       } )
-
       return ()=>{
         if(ctx){
           ctx.revert();
         }
       }
-
   } ,[])
-
-
-
-  
-
 
   return (
    <Box onMouseOver={ ()=>setmouseOver(true) } _hover={ { cursor:"pointer" } } onMouseOut={ ()=>setmouseOver(false) } className='single_expert' ref={(el)=>singleExpert.current[index] = el} >
-    <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:10,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'420px',base:"330px"}} border={`1px solid ${borderColor}`}>
+    <Box  sx={shadownIt} overflow={'hidden'} position={'relative'}  bg={bgColor} p={{sm:8,base:6}} borderRadius={{sm:30,base:20}} h={{sm:'420px',base:"330px"}} border={`1px solid ${borderColor}`}>
       <Flex position={'relative'} zIndex={1}  fontSize={'37px'} alignItems={'center'} className='expert_top_heading' gap={6} >
-        <Heading>{title}</Heading>
+        <Heading >{title}</Heading>
         <Box>
           {/* <Image src={demoIcon} /> */}
         </Box>
       </Flex>
       <Box py={6} position={'relative'} zIndex={1} className='expert_description'>
-
-        {description && <Text transition={"0.2s ease-in"} opacity={ {md: mouseOver ? 1 : 0 ,sm:1,base:1 } } p={{sm:5,base:0}} fontSize={'18px'}>{description}</Text>}
-        {allTools && <Box transition={"0.2s ease-in"} opacity={ {md: mouseOver ? 1 : 0 ,sm:1,base:1 } } fontSize={'18px'}>
+      
+      {description && <Box transition={"0.2s ease-in"} opacity={ {md: mouseOver ? 1 : 0 ,sm:1,base:1 } } fontSize={'18px'}>
           <ul style={{padding:'0px 20px'}} >
-            {allTools.map((item) => (
+            {description.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>

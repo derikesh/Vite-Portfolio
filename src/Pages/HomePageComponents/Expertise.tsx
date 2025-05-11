@@ -37,25 +37,24 @@ export const dataTechProp: Record<string, string> = {
 
 export interface ExpertDataProps {
   title:string,
-  description?:string,
-  allTools?: string[],
+  description?:string[],
   tech: string[]  
 }
 
 export let experData:Record<string,ExpertDataProps> = {
   frontend: {
-    title: "frontend Dev",
-    description:"As a frontend developer I am proficient in Figma design, React, GSAP, motion, TypeScript, Chakra UI, and more,creating dynamic and visually appealing user interfaces.",
+    title: "Frontend",
+    description:['Next,js','React','Redux Toolkit','Shadcn - Tailwind','GSAP','framer motion'],
     tech: Object.values(dataTechProp),
   },
   backend: {
-    title: "backend Dev",
-    description:"Begin frontend developer with backend expertise in Firebase and WordPress. I build sleek interfaces with strong features, using frontend tools for modern, responsive applications with backend integration.",
+    title: "Backend",
+    description:['Node.js','Express','JWT','Mongoose','Firebase','Wordpress'],
     tech: Object.values(dataTechProp),
   },
   tools:{
-    title:'tools i use',
-    allTools:['notion','git','github','vs code',' figma','illustrator'],
+    title:'Tools',
+    description:['Notion','git/github','Docker','Postman','Figma'],
     tech:Object.values(dataTechProp)
   }
 };

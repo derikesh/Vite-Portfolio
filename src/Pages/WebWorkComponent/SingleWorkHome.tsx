@@ -97,6 +97,7 @@ export default function SingleWork({
               <></>
             )}
 
+        <Link to={`${link}`} target="_blank">
             <Box
               border={"2px solid white"}
               width={"fit-content"}
@@ -110,10 +111,10 @@ export default function SingleWork({
                 color: "black",
               }}
             >
-              <Link to={`${link}`} target="_blank">
+              
                 {techStack ? "view Site" : "View desgin"}
-              </Link>
             </Box>
+          </Link>
           </Flex>
         </Flex>
 
@@ -123,13 +124,13 @@ export default function SingleWork({
           bg={"#272727"}
           borderRadius={"10px"}
           my={{ lg: 10, md: 6, base: 16 }}
-          width={"100%"}
+          width={"95%"}
           height={{ lg: "350px", md: "100%", base: "200px" }}
           className="project_img"
           padding={{md:5,base:2}}
         >
           <Swiper
-            spaceBetween={10}
+            spaceBetween={25}
             grabCursor={true}
             // loop={true}
             pagination={false}
@@ -146,10 +147,10 @@ export default function SingleWork({
                 slidesPerView: 1.2,
               },
               1200: {
-                slidesPerView: 1.6,
+                slidesPerView: 1.8,
               },
               1400: {
-                slidesPerView: 2.1,
+                slidesPerView:2.1,
               },
             }}
           >

@@ -21,7 +21,6 @@ function App() {
   return (
     <>
       <Box className="site_wrap">
-
         {loading ? (
           <Loading />
         ) : (
@@ -33,7 +32,7 @@ function App() {
             <Box>
               <Box
                 position={"relative"}
-                maxW={"1366px"}
+                // maxW={"1560px"}
                 width={{ sm: "90%", base: "100%" }}
                 margin={"auto"}
               >

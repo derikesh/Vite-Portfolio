@@ -43,13 +43,17 @@ h5 {
 }
 
 .project_img img {
-  object-fit: contain;
+  object-fit: cover;
   height: 100%;
   border-radius: 10px;
   width: 100%;
-  object-position: left;
+  object-position: top left;
 }
 
+
+.single_webwork_img {
+  object-fit: 'cover' !important;
+}
 
 .single_expert:hover .single_icons {
   opacity: 1 !important;

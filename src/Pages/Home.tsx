@@ -18,13 +18,10 @@ function HomePage() {
 
   return (
     <>
-  
-
       <LandingPage />
       <Box px={{ base: "15px" }}>
         <AboutPage />
-        <Expertise />
-        <Illustration/>
+        {/* <Expertise /> */}
         {/* <Porjects/> */}
         <WebWorks/>
         <AboutRedirect/>

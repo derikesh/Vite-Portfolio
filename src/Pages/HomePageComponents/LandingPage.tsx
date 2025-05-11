@@ -92,7 +92,7 @@ function LandingPage() {
     };
   }, [holdStateX, holdStateY]);
 
-  const languages = ["javascript", "php", "......", "typescript", "react", "node js", "wordpress", "tailwind", "firebase"];
+  const languages = ["javascript", "php", "GSAP", "typescript", "react", "node js", "wordpress","..", "tailwind", "firebase",];
 
   // for hover effect 
 
@@ -158,7 +158,7 @@ function LandingPage() {
         <Box className="landing_text">
           <Heading
             fontSize={{
-              xl: "70px",
+              xl: "60px",
               lg: "65px",
               md: "60px",
               sm: "55px",
@@ -171,13 +171,13 @@ function LandingPage() {
             top={7}
             color={"#DEDEDE"}
           >
-            welcome to my <span style={{ color: "#6dcbdb" }}>portfolio.</span>
+            FRONTEND <span style={{ color: "#6dcbdb" }}>PORTFOLIO.</span>
           </Heading>
         </Box>
 
         <Box position="absolute" bottom={0} width="100%">
 
-        <Box display={{lg:'block',sm:'none',base:'none'}} position={"absolute"} width={"1626px"} bottom={28} left={-24}>
+        <Box display={{lg:'block',sm:'none',base:'none'}} position={"absolute"}  width={"1650px"} bottom={28}>
         <Flex          
           fontSize={"110px"}
           marginBottom={-7}
@@ -193,7 +193,7 @@ function LandingPage() {
         </Flex>
       </Box>
 
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" pointerEvents={'none'} justifyContent="center">
             <Box
               ref={landingImages}
               overflow={{ md: "visible", base: "hidden" }}
@@ -201,7 +201,7 @@ function LandingPage() {
               top={7}
               className="landing_images"
               width={{
-                xl: "42%",
+                xl: "40%",
                 lg: "60%",
                 md: "80%",
                 sm: "90%",

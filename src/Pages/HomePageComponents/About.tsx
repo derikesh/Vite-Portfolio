@@ -3,34 +3,40 @@ import Ring from "../../assets/images/ring.svg";
 import Vector from "../../assets/images/vector.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import TextPlugin from 'gsap/TextPlugin';
+import TextPlugin from "gsap/TextPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Link } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger ,TextPlugin) ;
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 function AboutPage() {
-
   const ImageRef = useRef<HTMLDivElement>(null);
   const aboutHeading = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {       
-
+  useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline( {
-
+      const tl = gsap.timeline({
         scrollTrigger: {
-        trigger: aboutHeading.current,
-        start: '0px 65%',
-        end: 'bottom center', 
-        toggleActions: 'play none none none', 
-      },
-    } );     
+          trigger: aboutHeading.current,
+          start: "0px 65%",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+      });
 
-      tl.to( aboutHeading.current ,{  duration:2 , text:{ value:"HI, I AM RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS"} } );
+      tl.to(aboutHeading.current, {
+        duration: 1.4,
+        text: {
+          value:
+            "NAMASTE , I'M RIKESH, A FRONTEND DEVELOPER EXPLORING SOFTWARE WORLDS",
+        },
+      });
 
-      tl.fromTo( ImageRef.current , { scale:0  } , { scale:1,ease: "elastic.out(1,0.3)",delay:1.3} );        
-
+      tl.fromTo(
+        ImageRef.current,
+        { scale: 0 },
+        { scale: 1, ease: "elastic.out(1,0.3)", delay: 1.3 }
+      );
     });
 
     return () => {
@@ -42,23 +48,27 @@ function AboutPage() {
 
   return (
     <>
-      <Box overflow={'hidden'}  className="about_page_wrap" py={{sm:36,base:20}}  mb={{lg:30,base:5}}>
+      <Box
+        overflow={"hidden"}
+        className="about_page_wrap"
+        py={{ sm: 60, base: 20 }}
+        mb={{ lg: 30, base: 5 }}
+      >
         <Heading
           ref={aboutHeading}
           className="heading_about"
-          fontSize={{ lg: '74px', md: '32px', sm: '42px', base: '36px' }}
+          fontSize={{ lg: "74px", md: "32px", sm: "42px", base: "36px" }}
           fontWeight={600}
           lineHeight={1.3}
           as="h2"
-          color={'#E6E6E6'}
-          height={{ sm: '160px',base:"220px" }}
-        >
-        </Heading>
+          color={"#E6E6E6"}
+          height={{ sm: "160px", base: "220px" }}
+        ></Heading>
 
-        <Flex         
+        <Flex
           direction={{ lg: "row", md: "row", sm: "column", base: "column" }}
           py={{ lg: "75px", sm: "50px", base: "0px" }}
-          gap={{lg:10}}
+          gap={{ lg: 10 }}
         >
           <Box
             display={"flex"}
@@ -70,20 +80,26 @@ function AboutPage() {
             <Text
               fontSize={{ lg: "24px", md: "20px", sm: "20px", base: "18px" }}
             >
-             Versatile Frontend Developer aiming to grow as Software engineer, enthusiastic about developing diverse software applications with great UI designs, focusing on creating visually appealing and user-friendly experiences.
+              A curious builder with a passion for learning
+              creating and bringing ideas to life through design, code, and
+              creativity. Started with frontend development, now exploring the
+              broader world of technology and computer science</Text>
+              <Text fontSize={{ lg: "24px", md: "20px", sm: "20px", base: "18px" }} >
+              Inspired by
+              imaginative minds and driven by a love for discovery, always
+              exploring where creativity and code can go together.
             </Text>
-{/* 
-            <Link 
+            
+            {/* <Link 
             onClick={ ()=>{window.scroll(0,0)} }
             to={'/about'} >
               <Text fontSize={{sm:'20px',base:18}} color={'#1C97DD'} >Learn More about me </Text>
             </Link> */}
-            
           </Box>
 
-          <Box           
+          <Box
             position={"relative"}
-            bottom={{sm:4,base:0}}
+            bottom={{ sm: 4, base: 0 }}
             width={{ lg: "35%", md: "40%", sm: "50%", base: "65%" }}
             margin={{ md: "unset", sm: "auto", base: "auto" }}
             py={{ md: "unset", base: "80px" }}
@@ -96,8 +112,11 @@ function AboutPage() {
             >
               <Image width={"100%"} height={"100%"} src={Ring} />
             </Box>
-            <Box  ref={ImageRef} display={{ lg: "block", md: "none", base: "none" }}>
-              <Flex               
+            <Box
+              ref={ImageRef}
+              display={{ lg: "block", md: "none", base: "none" }}
+            >
+              <Flex
                 position={"absolute"}
                 right={20}
                 bottom={-10}
@@ -107,19 +126,20 @@ function AboutPage() {
               >
                 <Image height={"100%"} width={"100%"} src={Vector} />
                 <Text fontSize={"14px"} width={"100%"} color={"white"}>
-                 My Favourite ring btw
+                  My Favourite ring btw
                 </Text>
               </Flex>
             </Box>
           </Box>
-
         </Flex>
 
-
-        <Box className="just a border"  borderBottom={'3px solid'} borderBottomWidth={2}  borderColor={'#CDF0F8'} width={'40%'}>
-
-        </Box>
-
+        <Box
+          className="just a border"
+          borderBottom={"3px solid"}
+          borderBottomWidth={2}
+          borderColor={"#CDF0F8"}
+          width={"40%"}
+        ></Box>
       </Box>
     </>
   );

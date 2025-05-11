@@ -24,8 +24,7 @@ export default function AnimationLine() {
             trigger: lineLeft.current,
             start: '0px 60%',            
             end: 'bottom center', 
-            toggleActions: 'play none none none', 
-
+            toggleActions: 'play none none reverse', 
           }} );
 
         tl.fromTo( lineLeft.current , { height:0 } , {height:'160%',duration:1,ease:"power1.out"} )

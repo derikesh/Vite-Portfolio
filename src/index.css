@@ -1,22 +1,19 @@
-
-
 body {
   margin: 0;
- padding: 0;
- background: linear-gradient(180deg, #252525 0.59%, rgba(37, 37, 37, 0.62) 100%);
- font-style: normal;
+  padding: 0;
+  background: linear-gradient(180deg, #252525 0.59%, rgba(37, 37, 37, 0.62) 100%);
+  font-style: normal;
 }
 
 .site_wrap {
-  background: #121212 ;
-  width: '100%';
+  background: #121212;
+  width: 100%;
   color: white;
   font-family: "News Cycle", sans-serif;
   min-height: 100vh;
 }
 
-
-.site_wrap h1 , .site_wrap h2 {
+.site_wrap h1, .site_wrap h2 {
   font-family: "Londrina Solid", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -26,8 +23,8 @@ body {
   background-color: #252525;
 }
 
-@media only screen and ( min-width:769px ) {
-  .burger_Curseo{
+@media only screen and (min-width: 769px) {
+  .burger_Curseo {
     display: none;
   }
 }
@@ -37,25 +34,22 @@ body {
   /* transition: 0.4s ease-in; */
 }
 
-
 .bg_home.move-left {
   transform: translateX(25px); 
   /* transition: 0.4s ease-in; */
-
 }
-
 
 .bg_home.move-up {
   top: -7px; 
 }
-
 
 .bg_home.move-down {
   top: 0; 
 }
 
 .sticky { 
-  background: rgb(7, 43, 47);
+  background: rgba(7, 43, 47, 0.65);
+  backdrop-filter: blur(8px);
   border-radius: 50px;
   position: sticky;
   top: 20px;
