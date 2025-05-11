@@ -129,7 +129,7 @@ export default function SingleWork({
           padding={{md:5,base:2}}
         >
           <Swiper
-            spaceBetween={10}
+            spaceBetween={25}
             grabCursor={true}
             // loop={true}
             pagination={false}
@@ -146,7 +146,7 @@ export default function SingleWork({
                 slidesPerView: 1.2,
               },
               1200: {
-                slidesPerView: 1.6,
+                slidesPerView: 2.1,
               },
               1400: {
                 slidesPerView: 2.1,
@@ -159,7 +159,8 @@ export default function SingleWork({
                   <Image
                     width={"100%"}
                     height={"100%"}
-                    className="single_webwork_img"
+                    // className="single_webwork_img"
+                    objectFit={'contain'}
                     src={item}
                   />
                 </SwiperSlide>
