@@ -3,6 +3,8 @@ import AboutPage from "./HomePageComponents/About";
 import LandingPage from "./HomePageComponents/LandingPage";
 import AboutRedirect from "./AboutRedirect";
 import WebWorks from "./WebWorkHome";
+import Illustration from "./HomePageComponents/Illustration";
+import Expertise from "./HomePageComponents/Expertise";
 
 
 function HomePage() {
@@ -15,7 +17,8 @@ function HomePage() {
       <LandingPage />
       <Box px={{ base: "15px" }}>
         <AboutPage />
-        {/* <Expertise /> */}
+        <Expertise />
+        <Illustration/>
         {/* <Porjects/> */}
         <WebWorks/>
         <AboutRedirect/>
